@@ -1,1 +1,1 @@
-This is going to be called Fan Voice 
+Fan Voice is a way for super fans to collaborate on writing tweets for their favorite characters. 
