@@ -20,10 +20,19 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'rspec-rails', '~> 2.11'
+end
+
+group :test do
+  gem 'capybara', '1.1.2'
+  gem 'factory_girl', '2.6.4'
+  gem 'simplecov', :require => false
+end
+
 gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
-gem 'rspec-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
