@@ -5,7 +5,16 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'dynamic_form', '1.1.4'
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'devise', '2.1.0'
+gem 'cancan', '1.6.7'
 gem 'sqlite3'
+gem 'pry-rails'
+gem 'pry-doc'
+gem 'pry-debugger'
+gem 'launchy'
 
 
 # Gems used only for assets and not required
@@ -18,6 +27,8 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'zurb-foundation', '~> 4.0.0'
+
 end
 
 group :development do
