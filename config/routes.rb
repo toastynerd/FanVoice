@@ -1,4 +1,6 @@
 FanVoice::Application.routes.draw do
+  root :to => "source_materials#index"
+  resources :source_materials
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
