@@ -11,13 +11,15 @@ gem 'dynamic_form', '1.1.4'
 gem 'devise', '2.1.0'
 gem 'cancan', '1.6.7'
 gem 'sqlite3'
-gem 'pry-rails'
-gem 'pry-doc'
-gem 'pry-debugger'
-gem 'launchy'
 
+# pry debugging for test and dev
+group :test, :development do
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-debugger'
+  gem 'launchy'
+end
 
-# Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -42,8 +44,6 @@ group :test do
 end
 
 gem 'jquery-rails'
-gem 'execjs'
-gem 'therubyracer'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

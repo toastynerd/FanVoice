@@ -1,0 +1,15 @@
+
+module mypol 1.0;
+
+require {
+	type mongod_t;
+	type var_lib_t;
+	class dir { write add_name };
+	class file create;
+}
+
+#============= mongod_t ==============
+#!!!! This avc is allowed in the current policy
+
+allow mongod_t var_lib_t:dir { write add_name };
+allow mongod_t var_lib_t:file create;
