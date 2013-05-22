@@ -2,14 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+#get form error messages
 gem 'dynamic_form', '1.1.4'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+#authentication / authorization
 gem 'devise', '2.1.0'
 gem 'cancan', '1.6.7'
+
 gem 'sqlite3'
 
 # pry debugging for test and dev
