@@ -15,12 +15,17 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="four columns">
+  <div class="large-6 columns">
     <%= f.label :bio %><br />
     <%= f.text_area :bio %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="large-6 columns">
+    <%= f.label :handle %><br />
+    <%= f.text_area :handle %>
+
+  <div>
+    <%= f.submit class: "small button success radius" %>
   </div>
+
 
 <% end %>
