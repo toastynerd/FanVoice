@@ -19,11 +19,17 @@
     <%= f.label :bio %><br />
     <%= f.text_area :bio %>
   </div>
-  <div class="large-6 columns">
-    <%= f.label :handle %><br />
-    <%= f.text_area :handle %>
 
-  <div>
+  <div class="row collapse">
+    <div class="small-3 large-2 columns">
+      <span class"prefix">@</span>
+    </div>
+    <div class="small-9 large-10 columns">
+      <%= f.label :handle %>
+      <%= f.text_area :handle %>
+    </div>
+  </div>
+
     <%= f.submit class: "small button success radius" %>
   </div>
 
