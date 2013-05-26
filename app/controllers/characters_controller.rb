@@ -1,6 +1,8 @@
 class CharactersController < ApplicationController
   # GET /characters
   # GET /characters.json
+  before_filter :find_source_material
+
   def index
     @characters = Character.all
 
@@ -13,18 +15,17 @@ class CharactersController < ApplicationController
   # GET /characters/1
   # GET /characters/1.json
   def show
-    @character = Character.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @character }
+      format.json { render json: [@source_material, @character] }
     end
   end
 
   # GET /characters/new
   # GET /characters/new.json
   def new
-    @character = Character.new
+    @character = @source_material.character.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,15 +41,15 @@ class CharactersController < ApplicationController
   # POST /characters
   # POST /characters.json
   def create
-    @character = Character.new(params[:character])
+    @character = @source_material.character.build(params[:character])
 
     respond_to do |format|
       if @character.save
-        format.html { redirect_to @character, notice: 'Character was successfully created.' }
-        format.json { render json: @character, status: :created, location: @character }
+        format.html { redirect_to [@source_material, @character], notice: 'Character was successfully created.' }
+        format.json { render json: [@source_material, @character], status: :created, location: [@source_material, @character] }
       else
         format.html { render action: "new" }
-        format.json { render json: @character.errors, status: :unprocessable_entity }
+        format.json { render json: @source_material.character.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -80,4 +81,12 @@ class CharactersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+    def find_source_material
+      @source_material = Project.find(params[:project_id])
+    end
+    def find_project
+      @character = @source_material.characters.find(params[:id])
+    end
 end

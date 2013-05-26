@@ -1,8 +1,10 @@
 FanVoice::Application.routes.draw do
-  resources :characters
+
   root :to => "characters#index"
 
-  resources :source_materials
+  resources :source_materials do
+    resources :characters
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

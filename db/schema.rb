@@ -11,17 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523221647) do
+ActiveRecord::Schema.define(:version => 20130526212535) do
 
   create_table "characters", :force => true do |t|
     t.string   "name"
     t.text     "bio"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "handles"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "handle"
-    
-ActiveRecord::Schema.define(:version => 20130522004350) do
+    t.integer  "source_material_id"
+  end
+
+  add_index "characters", ["source_material_id"], :name => "index_characters_on_source_material_id"
 
   create_table "source_materials", :force => true do |t|
     t.string   "title"

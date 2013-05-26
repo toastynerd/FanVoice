@@ -3,6 +3,7 @@
   <p><%= @source_material.genre %></p>
   <p><%= @source_material.description %></p>
   <%= link_to "Edit Source", edit_source_material_path, :class => "button" %>
-  <%= link_to "Delete Source", @source, :method => :delete, :confirm => "Are you sure?", 
+  <%= link_to "Delete Source", @source, :method => :delete, :confirm => "Are you sure?",
                                         :class => "button" %>
+  <%= link_to "New Character", new_source_material_character_path(@source_material) %>
 </div>
