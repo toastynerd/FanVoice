@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20130523221647) do
     t.datetime "updated_at", :null => false
     t.string   "handles"
     t.string   "handle"
+    
+ActiveRecord::Schema.define(:version => 20130522004350) do
+
+  create_table "source_materials", :force => true do |t|
+    t.string   "title"
+    t.string   "genre"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
