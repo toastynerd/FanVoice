@@ -24,6 +24,22 @@ class SourceMaterialsController < ApplicationController
     #
   end
 
+  def edit
+    #
+  end
+
+  def update
+    if @source_material.update_attributes(params[:source_material])
+      flash[:notice]="Source material has been updated."
+      redirect_to @source_material
+    else
+      flash[:alert]="Could not update source material."
+      render :action => "edit"
+    end
+  end
+
+
+
 private
   def find_source
     @source_material = SourceMaterial.find(params[:id])
