@@ -38,6 +38,12 @@ class SourceMaterialsController < ApplicationController
     end
   end
 
+  def destroy
+    @source_material.destroy
+    flash[:notice] = "Source has been deleted."
+    redirect_to source_materials_path
+  end
+
 
 
 private
