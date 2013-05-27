@@ -11,7 +11,7 @@ class CharactersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @characters }
+      format.json { render json: [@source_material, @characters] }
     end
   end
 
