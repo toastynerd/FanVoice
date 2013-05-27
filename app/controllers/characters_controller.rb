@@ -28,11 +28,11 @@ class CharactersController < ApplicationController
   # GET /characters/new
   # GET /characters/new.json
   def new
-    @character = @source_material.character.build
+    @character = @source_material.characters.build
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @character }
+      format.json { render json: [@source_material, @character] }
     end
   end
 

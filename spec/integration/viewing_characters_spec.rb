@@ -8,9 +8,9 @@ feature "Viewing Characters" do
 
     character.update_attribute(:user, user)
 
-    harry = Factory):source_material, :title => "Harry Potter")
+    harry = Factory(:source_material, :title => "Harry Potter")
     Factory(:character, :source_material => harry, :name => "Hermione Granger",
-      :bio => "aka Emma Watson" :handle => "hermionequotes")
+      :bio => "aka Emma Watson", :handle => "hermionequotes")
 
     visit '/'
   end

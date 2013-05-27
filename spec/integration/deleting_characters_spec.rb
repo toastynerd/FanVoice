@@ -6,6 +6,7 @@ feature 'Deleting characters' do
     character = Factory(:character, :source_material => source_material)
     character.update_attribute(:user, user)
     character
+  end
   before do
     sign_in_as!(user)
     visit '/'
