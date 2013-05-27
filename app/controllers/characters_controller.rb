@@ -72,11 +72,10 @@ class CharactersController < ApplicationController
   # DELETE /characters/1
   # DELETE /characters/1.json
   def destroy
-    @character = Character.find(params[:id])
     @character.destroy
 
     respond_to do |format|
-      format.html { redirect_to characters_url }
+      format.html { redirect_to @source_material }
       format.json { head :no_content }
     end
   end
