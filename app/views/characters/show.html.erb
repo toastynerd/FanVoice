@@ -8,7 +8,13 @@
 <p>
   <b>Bio:</b>
   <%= @character.bio %>
+  <%= simple_format(@ticket.description) %>
 </p>
+<p>
+  <b>Handle:</b>
+  <%= @character.handle %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_character_path(@character) %> |

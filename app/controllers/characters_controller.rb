@@ -2,6 +2,7 @@ class CharactersController < ApplicationController
   # GET /characters
   # GET /characters.json
   before_filter :find_source_material
+  before_filter :find_character, :only => [:show, :edit, :update, :destroy]
 
   def index
     @characters = Character.all
@@ -86,7 +87,7 @@ class CharactersController < ApplicationController
     def find_source_material
       @source_material = Project.find(params[:project_id])
     end
-    def find_project
+    def find_character
       @character = @source_material.characters.find(params[:id])
     end
 end

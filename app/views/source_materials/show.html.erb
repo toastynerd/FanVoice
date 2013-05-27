@@ -6,4 +6,12 @@
   <%= link_to "Delete Source", @source, :method => :delete, :confirm => "Are you sure?",
                                         :class => "button" %>
   <%= link_to "New Character", new_source_material_character_path(@source_material) %>
+  <ul id= "characters">
+    <% @source_material.characters.each do |character| %>
+    <li>
+      #<%= character.id %> -
+      <%= link_to character.name, [@source_material, character] %>
+    </li>
+    <% end %>
+  </ul>
 </div>
