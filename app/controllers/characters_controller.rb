@@ -36,7 +36,6 @@ class CharactersController < ApplicationController
 
   # GET /characters/1/edit
   def edit
-    @character = Character.find(params[:id])
   end
 
   # POST /characters
@@ -58,15 +57,14 @@ class CharactersController < ApplicationController
   # PUT /characters/1
   # PUT /characters/1.json
   def update
-    @character = Character.find(params[:id])
 
     respond_to do |format|
       if @character.update_attributes(params[:character])
-        format.html { redirect_to @character, notice: 'Character was successfully updated.' }
+        format.html { redirect_to [@source_material, @character], notice: 'Character was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @character.errors, status: :unprocessable_entity }
+        format.json { render json: @source_material.character.errors, status: :unprocessable_entity }
       end
     end
   end
