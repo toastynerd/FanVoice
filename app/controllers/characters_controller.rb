@@ -1,47 +1,30 @@
 class CharactersController < ApplicationController
-  # GET /characters
-  # GET /characters.json
+
+  before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :find_source_material
   before_filter :find_character, :only => [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, :except => [:index, :show]
+
 
 
   def index
     @characters = Character.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: [@source_material, @characters] }
-    end
   end
 
-  # GET /characters/1
-  # GET /characters/1.json
+
   def show
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: [@source_material, @character] }
-    end
   end
 
-  # GET /characters/new
-  # GET /characters/new.json
+
   def new
     @character = @source_material.characters.build
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: [@source_material, @character] }
-    end
   end
 
-  # GET /characters/1/edit
+
   def edit
   end
 
-  # POST /characters
-  # POST /characters.json
+
   def create
     @character = @source_material.character.build(params[:character])
     @ticket.user = current_user
@@ -57,8 +40,7 @@ class CharactersController < ApplicationController
     end
   end
 
-  # PUT /characters/1
-  # PUT /characters/1.json
+
   def update
 
     respond_to do |format|
