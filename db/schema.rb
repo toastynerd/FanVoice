@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130527011224) do
+ActiveRecord::Schema.define(:version => 20130527015126) do
 
   create_table "characters", :force => true do |t|
     t.string   "name"
@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(:version => 20130527011224) do
     t.datetime "updated_at",         :null => false
     t.string   "handle"
     t.integer  "source_material_id"
+    t.integer  "user_id"
   end
 
   add_index "characters", ["source_material_id"], :name => "index_characters_on_source_material_id"
+  add_index "characters", ["user_id"], :name => "index_characters_on_user_id"
 
   create_table "source_materials", :force => true do |t|
     t.string   "title"

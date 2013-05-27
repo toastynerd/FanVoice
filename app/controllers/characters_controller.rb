@@ -3,6 +3,8 @@ class CharactersController < ApplicationController
   # GET /characters.json
   before_filter :find_source_material
   before_filter :find_character, :only => [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, :except => [:index, :show]
+
 
   def index
     @characters = Character.all
@@ -42,6 +44,7 @@ class CharactersController < ApplicationController
   # POST /characters.json
   def create
     @character = @source_material.character.build(params[:character])
+    @ticket.user = current_user
 
     respond_to do |format|
       if @character.save

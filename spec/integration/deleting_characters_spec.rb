@@ -1,8 +1,13 @@
 require 'spec_helper'
 feature 'Deleting characters' do
   let!(:source_material) { Factory(:source_material) }
-  let!(:character) { Factory(:character, :source_material => source_material) }
+  let!(:user) { Factory(:confirmed_user) }
+  let!(:character) do
+    character = Factory(:character, :source_material => source_material)
+    character.update_attribute(:user, user)
+    character
   before do
+    sign_in_as!(user)
     visit '/'
     click_link source_material.title
     click_link character.name

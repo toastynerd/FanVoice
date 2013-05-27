@@ -1,9 +1,7 @@
+<div id="character" >
+<h2><%= @character.name %></h2>
+<span id="author">Created by <%= @character.user.email %></span>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @character.name %>
-</p>
 
 <p>
   <b>Bio:</b>
@@ -16,5 +14,5 @@
 </p>
 
 
-<%= link_to 'Edit Character', edit_character_path(@project, @character) %> |
+<%= link_to 'Edit Character', edit_character_path(@project, @character) %>
 <%= link_to 'Back', source_material_characters_path %>
