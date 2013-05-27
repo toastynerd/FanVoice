@@ -18,7 +18,7 @@ end
   scenario "Updating a character" do
     fill_in "Name", :with => "Cersei"
     click_button "Update Character"
-    page.should have_content "Character has been updated."
+    page.should have_content "Character updated."
     within("#character h2") do
       page.should have_content("Cersei")
     end
@@ -27,6 +27,6 @@ end
   scenario "Updating a character with invalid information" do
     fill_in "Name", :with => ""
     click_button "Update Character"
-    page.should have_content("Character has not been updated.")
+    page.should have_content("Character not updated, please check fields.")
   end
 end

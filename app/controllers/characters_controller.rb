@@ -41,10 +41,10 @@ class CharactersController < ApplicationController
   def update
 
     if @character.update_attributes(params[:character])
-      flash[:notice] = "Character was successfully updated."
+      flash[:notice] = "Character updated."
       redirect_to [@source_material, @character]
     else
-      flash[:alert] = "Character has not been created."
+      flash[:alert] = "Character not updated, please check fields."
       render :action => "edit"
     end
   end
