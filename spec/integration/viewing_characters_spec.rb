@@ -2,11 +2,15 @@ require 'spec_helper'
 
 feature "Viewing Characters" do
   before do
+    got  = Factory(:source_material, :title => "Game of Thrones")
     user = Factory(:user)
-    game = Factory(:character, :source_material => game, :name => "Cersei Lannister",
-      :bio => "Queen bitch", :handle => "cerseiquotes")
+    game = Factory(:character,
+                  :source_material => got,
+                  :name => "Cersei Lannister",
+                  :bio => "Queen bitch",
+                  :handle => "cerseiquotes")
 
-    character.update_attribute(:user, user)
+    game.update_attribute(:user, user)
 
     harry = Factory(:source_material, :title => "Harry Potter")
     Factory(:character, :source_material => harry, :name => "Hermione Granger",
