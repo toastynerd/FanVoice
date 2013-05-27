@@ -21,7 +21,7 @@ feature "Creating Characters" do
     fill_in "Bio", :with => "My pages are ugly!"
     fill_in "Handle", :with => "shenst1"
     click_button "Create Character"
-    page.should have_content("Character has been created.")
+    page.should have_content("Character was successfully created.")
     within("#character #author") do
       page.should have_content("Created by test@fanvoice.com")
     end
