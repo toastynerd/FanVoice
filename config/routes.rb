@@ -1,5 +1,7 @@
 FanVoice::Application.routes.draw do
 
+  devise_for :users
+
   root :to => "characters#index"
 
   resources :source_materials do

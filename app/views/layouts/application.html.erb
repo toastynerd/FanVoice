@@ -29,6 +29,11 @@
          </div>
        <% end %>
     </div>
+
+    <nav>
+      <%= link_to "Sign up", new_user_registration_path %>
+    </nav>
+
     <%= render "layouts/header" %>
     <%= yield %>
     <%= render "layouts/footer" %>

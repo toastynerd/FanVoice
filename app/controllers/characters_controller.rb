@@ -82,7 +82,7 @@ class CharactersController < ApplicationController
 
   private
     def find_source_material
-      @source_material = Project.find(params[:project_id])
+      @source_material = SourceMaterial.find(params[:source_material_id])
     end
     def find_character
       @character = @source_material.characters.find(params[:id])
