@@ -5,7 +5,7 @@ feature "Editing characters" do
   let!(:character) do
     character = Factory(:character, :source_material => source_material)
     character.update_attribute(:user, user)
-    ticket
+    character
   end
 
   before do

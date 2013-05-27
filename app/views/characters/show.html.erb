@@ -1,12 +1,13 @@
 <div id="character" >
 <h2><%= @character.name %></h2>
 <span id="author">Created by <%= @character.user.email %></span>
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Bio:</b>
   <%= @character.bio %>
-  <%= simple_format(@ticket.description) %>
+  <%= simple_format(@character.bio) %>
 </p>
 <p>
   <b>Handle:</b>
@@ -14,5 +15,5 @@
 </p>
 
 
-<%= link_to 'Edit Character', edit_character_path(@project, @character) %>
+<%= link_to 'Edit Character', [:edit, @source_material, @character] %>
 <%= link_to 'Back', source_material_characters_path %>
