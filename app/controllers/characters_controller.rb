@@ -26,8 +26,8 @@ class CharactersController < ApplicationController
 
 
   def create
-    @character = @source_material.character.build(params[:character])
-    @ticket.user = current_user
+    @character = @source_material.characters.build(params[:character])
+    @character.user = current_user
 
     respond_to do |format|
       if @character.save

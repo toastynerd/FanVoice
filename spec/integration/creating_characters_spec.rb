@@ -14,7 +14,7 @@ feature "Creating Characters" do
     fill_in "Email", :with => "test@fanvoice.com"
     fill_in "Password", :with => "password"
     click_button "Sign in"
-    within("h2") {page.should have_content(New Character)}
+    within("h2") {page.should have_content("New Character")}
   end
   scenario "Creating a character" do
     fill_in "Name", :with => "Non-standards compliance"
