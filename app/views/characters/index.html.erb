@@ -14,12 +14,12 @@
     <td><%= character.name %></td>
     <td><%= character.bio %></td>
     <td><%= link_to 'Show', character %></td>
-    <td><%= link_to 'Edit', edit_character_path(character) %></td>
-    <td><%= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_source_material_character_path(character) %></td>
+    <td><%= link_to 'Delete Character', [@source_material, @character], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Character', new_character_path %>
+<%= link_to 'New Character', new_source_material_character_path %>

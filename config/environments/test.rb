@@ -5,6 +5,11 @@ FanVoice::Application.configure do
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped
   # and recreated between test runs. Don't rely on the data there!
+
+  #define default url for devise
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+
   config.cache_classes = true
 
   # Configure static asset server for tests with Cache-Control for performance
