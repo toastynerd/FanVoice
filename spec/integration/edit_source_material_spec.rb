@@ -2,9 +2,11 @@ require 'spec_helper'
 
 feature "edit a source" do
   let!(:source) {Factory(:source_material)}
+
   before do
+    sign_in_as!(Factory(:admin_user))
     visit '/'
-    click_link source.title 
+    click_link source.title
     click_link "Edit Source"
   end
 
