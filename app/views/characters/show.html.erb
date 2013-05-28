@@ -1,15 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div id="character" >
+<h2><%= @character.name %></h2>
+<span id="author">Created by <%= @character.user.email %></span>
 
-<p>
-  <b>Name:</b>
-  <%= @character.name %>
-</p>
+<p id="notice"><%= notice %></p>
 
 <p>
   <b>Bio:</b>
   <%= @character.bio %>
+  <%= simple_format(@character.bio) %>
+</p>
+<p>
+  <b>Handle:</b>
+  <%= @character.handle %>
 </p>
 
 
-<%= link_to 'Edit', edit_character_path(@character) %> |
-<%= link_to 'Back', characters_path %>
+<%= link_to 'Edit Character', [:edit, @source_material, @character] %>
+<%= link_to "Delete Character",
+        source_material_character_path(@source_material, @character),
+        :method => :delete,
+       :confirm => "Are you sure you want to delete this character?" %>
+<%= link_to 'Back', source_material_characters_path %>
