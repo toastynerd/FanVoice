@@ -51,7 +51,12 @@ private
 
   def find_source
     @source_material = SourceMaterial.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+  flash[:alert] = "The source_material you were looking" +
+  " for could not be found."
+  redirect_to source_materials_path
   end
+
 
 
 end

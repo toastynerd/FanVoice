@@ -2,7 +2,7 @@ require 'spec_helper'
 feature "Creating Characters" do
   before do
     Factory(:source_material, :title => "Game of Thrones")
-    user = Factory(:user, :email => "test@fanvoice.com")
+    user = Factory(:admin_user, :email => "test@fanvoice.com")
     user.confirm!
 
     visit '/'
