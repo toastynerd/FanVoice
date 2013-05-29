@@ -8,6 +8,7 @@ feature 'Deleting characters' do
     character
   end
   before do
+    define_permission!(user, "view", source_material)
     sign_in_as!(user)
     visit '/'
     click_link source_material.title

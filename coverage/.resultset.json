@@ -37,7 +37,7 @@
       "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/helpers/application_helper.rb": [
         1,
         1,
-        178,
+        195,
         null,
         null
       ],
@@ -199,9 +199,10 @@
         1,
         1,
         1,
+        1,
         null,
         1,
-        51,
+        58,
         null,
         null,
         1,
@@ -249,10 +250,14 @@
         null,
         1,
         24,
+        12,
         null,
-        1,
+        12,
         null,
-        1,
+        null,
+        4,
+        null,
+        4,
         null,
         null,
         null,
@@ -267,9 +272,23 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        1,
+        12,
+        null,
+        null,
+        null
+      ],
+      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/models/permission.rb": [
+        1,
+        1,
+        1,
+        1,
         null
       ]
     },
-    "timestamp": 1369784521
+    "timestamp": 1369855985
   }
 }

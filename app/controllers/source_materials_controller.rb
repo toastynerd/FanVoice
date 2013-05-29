@@ -1,5 +1,6 @@
 class SourceMaterialsController < ApplicationController
   before_filter :authorize_admin!, :except => [:index, :show]
+  before_filter :authenticate_user!, :only => [:show]
   before_filter :find_source, :only => [:show, :edit, :update, :destroy]
 
   def index
@@ -50,11 +51,15 @@ class SourceMaterialsController < ApplicationController
 private
 
   def find_source
-    @source_material = SourceMaterial.find(params[:id])
+    @source_material = if current_user.admin?
+      SourceMaterial.find(params[:id])
+    else
+      SourceMaterial.viewable_by(current_user).find(params[:id])
+    end
     rescue ActiveRecord::RecordNotFound
-  flash[:alert] = "The source_material you were looking" +
-  " for could not be found."
-  redirect_to source_materials_path
+    flash[:alert] = "The source_material you were looking" +
+    " for could not be found."
+    redirect_to source_materials_path
   end
 
 

@@ -1,19 +1,13 @@
 require 'spec_helper'
 feature "Creating Characters" do
   before do
-    Factory(:source_material, :title => "Game of Thrones")
-    user = Factory(:admin_user, :email => "test@fanvoice.com")
-    user.confirm!
-
+    source_material = Factory(:source_material, title: "Game of Thrones")
+    user = Factory(:confirmed_user, :email => "test@fanvoice.com")
+    define_permission!(user, "view", source_material)
+    sign_in_as!(user)
     visit '/'
     click_link "Game of Thrones"
     click_link "New Character"
-    message = "You need to sign in or sign up before continuing."
-    page.should have_content(message)
-
-    fill_in "Email", :with => "test@fanvoice.com"
-    fill_in "Password", :with => "password"
-    click_button "Sign in"
     within("h2") {page.should have_content("New Character")}
   end
   scenario "Creating a character" do
