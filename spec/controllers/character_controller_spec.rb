@@ -21,6 +21,10 @@ describe CharactersController do
         message = "You cannot create characters on this source_material."
         flash[:alert].should eql(message)
       end
+      def cannot_update_characters!
+        response.should redirect_to(source_material)
+        flash[:alert].should eql("You cannot edit characters on this source_material.")
+      end
       it "cannot begin to create a character" do
         get :new, :source_material_id => source_material.id
         cannot_create_characters!
@@ -28,6 +32,17 @@ describe CharactersController do
       it "cannot create a character without permission" do
         post :create, :source_material_id => source_material.id
         cannot_create_characters!
+      end
+      it "cannot edit a character without permission" do
+        get :edit, { :source_material_id => source_material.id, :id => character.id }
+        cannot_update_characters!
+      end
+      it "cannot update a character without permission" do
+        put :update, { :source_material_id => source_material.id,
+                       :id => character.id,
+                       :character => {}
+                     }
+        cannot_update_characters!
       end
     end
   end

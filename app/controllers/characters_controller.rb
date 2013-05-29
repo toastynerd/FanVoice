@@ -4,6 +4,7 @@ class CharactersController < ApplicationController
   before_filter :find_source_material
   before_filter :find_character, :only => [:show, :edit, :update, :destroy]
   before_filter :authorize_create!, :only => [:new, :create]
+  before_filter :authorize_update!, :only => [:edit, :update]
 
 
   def index
@@ -37,7 +38,6 @@ class CharactersController < ApplicationController
     end
   end
 
-
   def update
 
     if @character.update_attributes(params[:character])
@@ -70,6 +70,12 @@ private
   def authorize_create!
     if !current_user.admin? && cannot?("create characters".to_sym, @source_material)
       flash[:alert] = "You cannot create characters on this source_material."
+      redirect_to @source_material
+    end
+  end
+  def authorize_update!
+    if !current_user.admin? && cannot?("edit characters".to_sym, @source_material)
+      flash[:alert] = "You cannot edit characters on this source_material."
       redirect_to @source_material
     end
   end
