@@ -1,8 +1,10 @@
 require 'spec_helper'
 feature "Creating Characters" do
   before do
+
     source_material = Factory(:source_material, title: "Game of Thrones")
     user = Factory(:confirmed_user, :email => "test@fanvoice.com")
+    define_permission!(user, "create characters", source_material)
     define_permission!(user, "view", source_material)
     sign_in_as!(user)
     visit '/'

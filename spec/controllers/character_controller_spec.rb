@@ -11,5 +11,24 @@ describe CharactersController do
       response.should redirect_to(root_path)
       flash[:alert].should eql("The source_material you were looking for could not be found.")
     end
+    context "with permission to view the source_material" do
+      before do
+        sign_in(:user, user)
+        define_permission!(user, "view", source_material)
+      end
+      def cannot_create_characters!
+        response.should redirect_to(source_material)
+        message = "You cannot create characters on this source_material."
+        flash[:alert].should eql(message)
+      end
+      it "cannot begin to create a character" do
+        get :new, :source_material_id => source_material.id
+        cannot_create_characters!
+      end
+      it "cannot create a character without permission" do
+        post :create, :source_material_id => source_material.id
+        cannot_create_characters!
+      end
+    end
   end
 end
