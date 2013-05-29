@@ -2,6 +2,7 @@ require 'spec_helper'
 
 feature "create a new source material" do
   before do
+    sign_in_as!(Factory(:admin_user))
     visit '/'
     click_link "New Source Material"
   end

@@ -3,7 +3,8 @@
   <% @source_materials.each do |source| %>
     <%= link_to source.title, source, :class => "button" %>
   <% end %>
-
+  <% admins_only do %>
   <%= link_to "New Source Material", new_source_material_path, :class => "button" %>
-  
+  <% end %>
+
 </div>

@@ -1,5 +1,10 @@
 FanVoice::Application.routes.draw do
 
+  namespace :admin do
+  root :to => "base#index"
+  resources :users
+  end
+
   devise_for :users
 
   root :to => "source_materials#index"
