@@ -5,6 +5,7 @@ class CharactersController < ApplicationController
   before_filter :find_character, :only => [:show, :edit, :update, :destroy]
   before_filter :authorize_create!, :only => [:new, :create]
   before_filter :authorize_update!, :only => [:edit, :update]
+  before_filter :authorize_delete!, :only => :destroy
 
 
   def index
@@ -79,4 +80,10 @@ private
       redirect_to @source_material
     end
   end
+  def authorize_delete!
+  if !current_user.admin? && cannot?(:"delete characters", @source_material)
+    flash[:alert] = "You cannot delete characters from this source_material."
+    redirect_to @source_material
+  end
+end
 end

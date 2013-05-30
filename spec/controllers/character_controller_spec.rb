@@ -44,6 +44,12 @@ describe CharactersController do
                      }
         cannot_update_characters!
       end
+      it "cannot delete a character without permission" do
+        delete :destroy, { :source_material_id => source_material.id, :id => character.id }
+        response.should redirect_to(source_material)
+        message = "You cannot delete characters from this source_material."
+        flash[:alert].should eql(message)
+      end
     end
   end
 end
