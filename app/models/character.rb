@@ -3,6 +3,7 @@ class Character < ActiveRecord::Base
 
   belongs_to :source_material
   belongs_to :user
+  has_one :twitter_character
 
   validates :bio, presence: :true
   validates :name, presence: :true

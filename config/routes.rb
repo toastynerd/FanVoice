@@ -12,6 +12,10 @@ FanVoice::Application.routes.draw do
   resources :source_materials do
     resources :characters
   end
+  
+  #oauth and twitter
+  match 'auth/:provider/callback', to: "twitter_characters#create"
+  match 'auth/failure', to: redirect('/')
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

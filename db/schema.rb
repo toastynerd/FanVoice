@@ -11,16 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528181755) do
+ActiveRecord::Schema.define(:version => 20130530173854) do
 
   create_table "characters", :force => true do |t|
     t.string   "name"
     t.text     "bio"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "handle"
-    t.integer  "source_material_id"
     t.integer  "user_id"
+    t.integer  "twitter_character_id"
+    t.integer  "source_material_id"
   end
 
   add_index "characters", ["source_material_id"], :name => "index_characters_on_source_material_id"
@@ -32,6 +33,16 @@ ActiveRecord::Schema.define(:version => 20130528181755) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "twitter_characters", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|
