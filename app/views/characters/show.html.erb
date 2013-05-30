@@ -20,5 +20,6 @@
         source_material_character_path(@source_material, @character),
         :method => :delete,
        :confirm => "Are you sure you want to delete this character?", :class => "button" %>
+<%= link_to "New Tweet", new_source_material_character_tweet_path(@source_material, @character), :class => "button" %>
 <%= link_to "Add Twitter Account", "/auth/twitter", :class => "button expand" %>
 <%= link_to 'Back', source_material_characters_path %>

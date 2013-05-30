@@ -12,7 +12,7 @@ gem 'cancan', '1.6.7'
 gem 'sqlite3'
 
 #Scheduling for sending future tweets
-gem 'resque'
+gem 'resque', :require => "resque/server"
 gem 'resque-scheduler'
 
 #stuff for sending tweets

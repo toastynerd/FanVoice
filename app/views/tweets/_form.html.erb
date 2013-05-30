@@ -1,0 +1,11 @@
+<%= form_for [@source_material, @character, @tweet] do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.label :post_at %>
+  <%= f.datetime_select :post_at %>
+
+  <%= f.submit :class => "button" %>
+<% end %>
