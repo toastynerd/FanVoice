@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+admin_user = User.create(:email => "test@fanvoice.com",
+                         :password => "password")
+admin_user.admin = true
+admin_user.confirm!
+
+SourceMaterial.create(:title => "Harry Potter", genre: "Fantasy",
+                      description: "Harry, hermione and ron.")
