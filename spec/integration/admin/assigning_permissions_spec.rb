@@ -18,4 +18,42 @@ require 'spec_helper'
     sign_in_as!(user)
     page.should have_content(source_material.title)
   end
+  scenario "Creating characters for a source_material" do
+    check_permission_box "view", source_material
+    check_permission_box "create_characters", source_material
+    click_button "Update"
+    click_link "Sign out"
+    sign_in_as!(user)
+    click_link source_material.title
+    click_link "New Character"
+    fill_in "Name", :with => "Cersei Lannister!"
+    fill_in "Bio", :with => "Queen bitch"
+    fill_in "Handle", :with => "@cerseiquotes"
+    click_button "Create"
+    page.should have_content("Character was successfully created.")
+  end
+  scenario "Updating a character for a source_material" do
+    check_permission_box "view", source_material
+    check_permission_box "edit_characters", source_material
+    click_button "Update"
+    click_link "Sign out"
+    sign_in_as!(user)
+    click_link source_material.title
+    click_link character.name
+    click_link "Edit Character"
+    fill_in "Name", :with => "Tyrion Lannister"
+    click_button "Update Character"
+    page.should have_content("Character updated.")
+  end
+ scenario "Deleting a character for a source_material" do
+   check_permission_box "view", source_material
+   check_permission_box "delete_characters", source_material
+   click_button "Update"
+   click_link "Sign out"
+   sign_in_as!(user)
+   click_link source_material.title
+   click_link character.name
+   click_link "Delete Character"
+   page.should have_content("Character has been deleted.")
+  end
 end
