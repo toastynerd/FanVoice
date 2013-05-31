@@ -1,2 +1,50 @@
-<h1>Fan Voice: Tweets from your favorite characters </h1>
+<div class='fixed'>
+<nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class ="name">
+        <h1><% link_to "Fan Voice", source_materials_path %></h1>
+      </li>
+    </ul>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+
+    <section class="top-bar-section">
+    <!-- Left Nav Section -->
+      <ul class="left">
+        <li class="divider"></li>
+        <li class="active"><%= link_to "Sources", source_materials_path %>
+        </li>
+      </ul>
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="divider"></li>
+        <li class="active">
+        <% if user_signed_in? %>
+
+          Signed in as <%= current_user.email %>
+        </li>
+          <li class="divider"></li>
+        <li class="active">
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        </li>
+        <li class="divider"></li>
+        <li class="active">
+          <% admins_only do %>
+            <%= link_to "Admin", admin_root_path %></li>
+          <% end %>
+          <% else %>
+          <li class="divider"></li>
+          <li class="active">
+            <%= link_to "Sign up", new_user_registration_path %>
+          </li>
+
+        <li class="divider"></li>
+        <li class="active">
+        <%= link_to "Sign in", new_user_session_path %>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+  </nav>
+</div>
 
