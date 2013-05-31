@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "Viewing Characters" do
   before do
     got  = Factory(:source_material, :title => "Game of Thrones")
-    user = Factory(:user)
+    user = Factory(:confirmed_user)
     game = Factory(:character,
                   :source_material => got,
                   :name => "Cersei Lannister",
@@ -16,6 +16,9 @@ feature "Viewing Characters" do
     Factory(:character, :source_material => harry, :name => "Hermione Granger",
       :bio => "aka Emma Watson", :handle => "hermionequotes")
 
+    define_permission!(user, "view", got)
+    define_permission!(user, "view", harry)
+    sign_in_as!(user)
     visit '/'
   end
 
