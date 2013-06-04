@@ -8,8 +8,8 @@ gem 'dynamic_form', '1.1.4'
 #authentication / authorization
 gem 'devise', '2.1.0'
 gem 'cancan', '1.6.7'
+gem 'pg', group: :production
 
-gem 'sqlite3'
 
 #Scheduling for sending future tweets
 gem 'resque', :require => "resque/server"
@@ -28,6 +28,8 @@ group :test, :development do
   gem 'pry-doc'
   gem 'pry-debugger'
   gem 'launchy'
+  gem 'sqlite3'
+
 end
 
 # in production environments by default.
