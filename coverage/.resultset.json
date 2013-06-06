@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/models/user.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/models/user.rb": [
         1,
         null,
         null,
@@ -21,7 +21,7 @@
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/controllers/application_controller.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -35,7 +35,7 @@
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/helpers/application_helper.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/helpers/application_helper.rb": [
         1,
         1,
         287,
@@ -46,7 +46,7 @@
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/helpers/admin/permissions_helper.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/helpers/admin/permissions_helper.rb": [
         1,
         1,
         null,
@@ -59,30 +59,38 @@
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/helpers/admin/users_helper.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/helpers/admin/users_helper.rb": [
         1,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/helpers/characters_helper.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/helpers/characters_helper.rb": [
         1,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/helpers/source_materials_helper.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/helpers/source_materials_helper.rb": [
         1,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/helpers/users_helper.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/helpers/tweets_helper.rb": [
         1,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/controllers/admin/base_controller.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/helpers/twitter_characters_helper.rb": [
+        1,
+        null
+      ],
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/controllers/admin/base_controller.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/controllers/admin/permissions_controller.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/controllers/admin/permissions_controller.rb": [
         1,
         1,
         1,
@@ -109,14 +117,14 @@
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/models/permission.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/models/permission.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/controllers/admin/users_controller.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/controllers/admin/users_controller.rb": [
         1,
         1,
         null,
@@ -170,7 +178,7 @@
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/controllers/characters_controller.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/controllers/characters_controller.rb": [
         1,
         null,
         1,
@@ -261,10 +269,12 @@
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/models/character.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/models/character.rb": [
         1,
         1,
         null,
+        1,
+        1,
         1,
         1,
         null,
@@ -273,7 +283,7 @@
         1,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/controllers/registrations_controller.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/controllers/registrations_controller.rb": [
         1,
         null,
         1,
@@ -283,7 +293,7 @@
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/controllers/source_materials_controller.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/controllers/source_materials_controller.rb": [
         1,
         1,
         1,
@@ -348,7 +358,7 @@
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/models/source_material.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/models/source_material.rb": [
         1,
         1,
         1,
@@ -368,13 +378,123 @@
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/controllers/users_controller.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/controllers/tweets_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/models/tweet.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/controllers/twitter_characters_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/models/twitter_character.rb": [
+        1,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/controllers/users_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/models/ability.rb": [
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/jobs/send_to_twitter.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/home/toasty/Documents/programming/code_fellows/silver_project/FanVoice/app/models/ability.rb": [
         1,
         1,
         1,
@@ -390,6 +510,6 @@
         null
       ]
     },
-    "timestamp": 1369938630
+    "timestamp": 1370031942
   }
 }
