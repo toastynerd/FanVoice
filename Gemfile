@@ -11,6 +11,9 @@ gem 'cancan', '1.6.7'
 
 gem 'sqlite3'
 
+#combining all rake tasks into one file
+gem 'foreman'
+
 #Scheduling for sending future tweets
 gem 'resque', :require => "resque/server"
 gem 'resque-scheduler'

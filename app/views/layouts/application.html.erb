@@ -22,6 +22,9 @@
 
   <body>
   <div class="row">
+      <%= render "layouts/header" %>
+
+    <div class="large-10 large-centered columns">
       <% flash.each do |key, value| %>
         <div class="flash" id="<%= key %>">
           <%= value %>
@@ -29,9 +32,9 @@
        <% end %>
 
 
-    <%= render "layouts/header" %>
     <%= yield %>
     <%= render "layouts/footer" %>
+    </div>
   </div>
     <%= javascript_include_tag "application" %>
   </body>
