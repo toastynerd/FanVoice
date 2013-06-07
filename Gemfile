@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 #get form error messages
-gem 'dynamic_form', '1.1.4'
+gem 'simple_form'
 
 #authentication / authorization
 gem 'devise', '2.1.0'

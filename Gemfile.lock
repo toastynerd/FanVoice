@@ -64,7 +64,6 @@ GEM
       warden (~> 1.1.1)
     diff-lcs (1.2.4)
     dotenv (0.7.0)
-    dynamic_form (1.1.4)
     email_spec (1.2.1)
       mail (~> 2.2)
       rspec (~> 2.0)
@@ -194,6 +193,9 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    simple_form (2.1.0)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     simple_oauth (0.2.0)
     simplecov (0.7.1)
       multi_json (~> 1.0)
@@ -242,7 +244,6 @@ DEPENDENCIES
   capybara (= 1.1.2)
   coffee-rails (~> 3.2.1)
   devise (= 2.1.0)
-  dynamic_form (= 1.1.4)
   email_spec (= 1.2.1)
   factory_girl (= 2.6.4)
   figaro
@@ -258,6 +259,7 @@ DEPENDENCIES
   resque-scheduler
   rspec-rails (~> 2.11)
   sass-rails (~> 3.2.3)
+  simple_form
   simplecov
   sqlite3
   twitter

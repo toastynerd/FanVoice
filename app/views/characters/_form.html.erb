@@ -1,28 +1,9 @@
-<%= form_for [@source_material, @character] do |f| %>
-  <% if @character.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved:</h2>
+<%= simple_form_for [@source_material, @character] do |f| %>
 
-      <ul>
-      <% @character.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %></br>
-
-    <%= f.label :bio %>
-    <%= f.text_area :bio %></br>
-
-
-      <%= f.label :handle %>
-      <%= f.text_area :handle %></br>
+    <%= f.input :name %>
+    <%= f.input :bio %>
+    <%= f.input :handle %>
 
     <%= f.submit class: "small button success radius" %>
-  </div>
-
 
 <% end %>

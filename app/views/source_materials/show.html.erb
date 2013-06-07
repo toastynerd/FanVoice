@@ -1,6 +1,6 @@
   <h4><%= @source_material.title %></h4>
-  <p><%= @source_material.genre %></p>
-  <p><%= @source_material.description %></p>
+  <p>Genre: <%= @source_material.genre %></p>
+  <p>Description: <%= @source_material.description %></p>
   <% admins_only do %>
   <%= link_to "Edit Source Material", edit_source_material_path, :class => "button" %>
   <%= link_to "Delete Source Material", @source, :method => :delete, :confirm => "Are you sure?", :class => "button" %>
@@ -10,10 +10,9 @@
   <% end %>
 
 
-  <ul id= "characters">
+  <ul id= "characters" class="panel">
     <% @source_material.characters.each do |character| %>
     <li>
-      #<%= character.id %> -
       <%= link_to character.name, [@source_material, character] %>
     </li>
     <% end %>
