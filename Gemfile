@@ -3,13 +3,16 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 #get form error messages
-gem 'dynamic_form', '1.1.4'
+gem 'simple_form'
 
 #authentication / authorization
 gem 'devise', '2.1.0'
 gem 'cancan', '1.6.7'
 gem 'pg', group: :production
 
+
+#combining all rake tasks into one file
+gem 'foreman'
 
 #Scheduling for sending future tweets
 gem 'resque', :require => "resque/server"

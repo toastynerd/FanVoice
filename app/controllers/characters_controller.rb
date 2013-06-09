@@ -9,7 +9,7 @@ class CharactersController < ApplicationController
 
 
   def index
-    @characters = Character.all
+    @characters = @source_material.characters.all
   end
 
 

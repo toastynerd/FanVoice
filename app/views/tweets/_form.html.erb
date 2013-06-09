@@ -1,11 +1,6 @@
-<%= form_for [@source_material, @character, @tweet] do |f| %>
-  <%= f.error_messages %>
+<%= simple_form_for [@source_material, @character, @tweet] do |f| %>
 
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-
-  <%= f.label :post_at %>
-  <%= f.datetime_select :post_at %>
-
+  <%= f.input :body %>
+  <%= f.input :post_at, as: :date, discard_year: true, discard_minute: true %>
   <%= f.submit :class => "button" %>
 <% end %>
