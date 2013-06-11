@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable
+         :confirmable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
 
@@ -14,5 +14,8 @@ class User < ActiveRecord::Base
   def to_s
   "#{email} (#{admin? ? "Admin" : "User"})"
   end
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_create do |user|
+
   # attr_accessible :title, :body
 end

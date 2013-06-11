@@ -22,6 +22,9 @@ gem 'resque-scheduler'
 gem 'omniauth-twitter'
 gem 'twitter'
 
+#gem for facebook authentication
+gem 'omniauth-facebook'
+
 #environment variables
 gem 'figaro'
 
