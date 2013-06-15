@@ -1,0 +1,6 @@
+<h2>Tweets for: <%= @character.name %></h2>
+<% @tweets.each do |tweet| %>
+  <%= tweet.body %>
+  <%= tweet.post_at %>
+  <%= link_to "edit", [:edit, @source_material, @character, tweet], :class => "button" %> </br>
+<% end %>
