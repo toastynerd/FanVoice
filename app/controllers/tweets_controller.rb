@@ -5,6 +5,10 @@ class TweetsController < ApplicationController
   before_filter :find_character
   before_filter :find_tweet, :only => [:show, :edit, :update, :destroy]
 
+  def index
+    @tweets = @character.tweets.find(:all, :conditions => ['post_at >= ?', Time.now], :order => "post_at")
+  end
+
   def new
     @tweet = @character.tweets.build 
   end
@@ -23,6 +27,26 @@ class TweetsController < ApplicationController
 
   def show
     #
+  end
+
+  def edit
+    #
+  end
+
+  def update
+    if @tweet.update_attributes(params[:tweet])
+      flash[:notice]="Tweet has been udpated."
+      redirect_to [@source_material, @character, @tweet]
+    else
+      flash[:alert]="Could not update tweet"
+      render :action => "new"
+    end
+  end
+
+  def destroy
+    @tweet.destroy
+    flash[:notice]="Tweet has been destroyed."
+    redirect_to [@source_material, @character]
   end
 
 private

@@ -3,4 +3,5 @@ class Tweet < ActiveRecord::Base
   attr_accessible :body, :post_at
 
   validates :body, :presence => true
+  validates :post_at, :uniqueness => true
 end

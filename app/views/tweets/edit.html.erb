@@ -1,0 +1,5 @@
+<h2>Editing Tweet for <%= @character.name %></h2>
+<%= simple_form_for [@source_material, @character, @tweet] do |f|  %>
+  <%= f.input :body %>
+  <%= f.submit :class => "button" %>
+<% end %>

@@ -46,6 +46,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation', '~> 4.0.0'
 
+  #for datepicker
+  gem 'jquery-ui-rails'
+  gem 'jquery-timepicker-addon-rails'
 end
 
 group :development do
@@ -60,6 +63,7 @@ group :test do
 end
 
 gem 'jquery-rails'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
