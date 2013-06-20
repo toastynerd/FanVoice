@@ -4,9 +4,10 @@
     <%= f.input :bio %>
     <%= f.input :handle %>
     <p>
-    <%= f.label :asset, "File" %><br>
-    <%= f.file_field :asset %>
+    <%= f.file_field :image %>
     </p>
+    <%= f.label :remote_image_url, "or image URL:" %>
+    <%= f.input :remote_image_url %>
 
     <%= f.submit class: "small button success radius" %>
 

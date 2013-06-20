@@ -25,6 +25,10 @@ gem 'twitter'
 #environment variables
 gem 'figaro'
 
+#file uploading
+gem "rmagick"
+gem "carrierwave"
+
 # pry debugging for test and dev
 group :test, :development do
   gem 'pry-rails'
@@ -46,7 +50,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation', '~> 4.0.0'
   # For asset upload
-  gem 'paperclip', '2.7.0'
 
 
   #for datepicker

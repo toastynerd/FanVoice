@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620020331) do
+ActiveRecord::Schema.define(:version => 20130620214254) do
 
   create_table "characters", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130620020331) do
     t.string   "asset_content_type"
     t.integer  "asset_file_size"
     t.datetime "asset_updated_at"
+    t.string   "image"
   end
 
   add_index "characters", ["source_material_id"], :name => "index_characters_on_source_material_id"

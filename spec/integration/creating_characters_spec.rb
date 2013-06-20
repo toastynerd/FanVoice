@@ -36,7 +36,7 @@ feature "Creating Characters" do
     attach_file "File", "spec/fixtures/hermione.jpg"
     click_button "Create Character"
     page.should have_content("Character was successfully created.")
-    within("#character .asset") do
+    within("#character .character_profile") do
       page.should have_content("hermione.jpg")
     end
   end
