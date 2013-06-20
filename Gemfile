@@ -45,6 +45,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation', '~> 4.0.0'
+  # For asset upload
+  gem 'paperclip', '2.7.0'
+
 
   #for datepicker
   gem 'jquery-ui-rails'
