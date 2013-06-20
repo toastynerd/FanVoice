@@ -28,6 +28,7 @@ gem 'figaro'
 #file uploading
 gem "rmagick"
 gem "carrierwave"
+gem "fog", "~> 1.3.1"
 
 # pry debugging for test and dev
 group :test, :development do
