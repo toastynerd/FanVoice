@@ -11,8 +11,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-  # storage :file
-  storage :fog
+  storage :file
+  # storage :fog
   include CarrierWave::MimeTypes
   process :set_content_type
 
@@ -39,8 +39,26 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_limit => [200, 200]
+    process :crop
+    process :resize_to_fill => [200, 200]
   end
+
+  version :large do
+    process :resize_to_limit => [600, 600]
+  end
+
+  def crop
+    if model.crop_x.present?
+          resize_to_limit(600, 600)
+          manipulate! do |img|
+            x = model.crop_x.to_i
+            y = model.crop_y.to_i
+            w = model.crop_w.to_i
+            h = model.crop_h.to_i
+            img.crop!(x, y, w, h)
+          end
+        end
+      end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

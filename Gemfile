@@ -29,6 +29,7 @@ gem 'figaro'
 gem "rmagick"
 gem "carrierwave"
 gem "fog", "~> 1.3.1"
+gem "carrierwave_direct"
 
 # pry debugging for test and dev
 group :test, :development do

@@ -1,0 +1,16 @@
+<h1> Crop Character </h1>
+<%= image_tag  @character.image_url(:large), id: "cropbox" %>
+
+<h4>Preview</h4>
+  <div style="width:100px; height:100px; overflow:hidden">
+    <%= image_tag  @character.image_url(:large), :id => "preview" %>
+  </div>
+
+<%= simple_form_for [@source_material, @character] do |f| %>
+  <% %w[x y w h].each do |attribute| %>
+    <%= f.input "crop_#{attribute}" %>
+  <% end %>
+  <div class="actions">
+    <%= f.submit "Crop" %>
+  </div>
+<% end %>

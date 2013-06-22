@@ -43,6 +43,10 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    carrierwave_direct (0.0.12)
+      carrierwave
+      fog
+      uuidtools
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.0.9)
@@ -251,6 +255,7 @@ GEM
     uglifier (2.1.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.4)
     vegas (0.1.11)
       rack (>= 1.0.0)
     warden (1.1.1)
@@ -269,6 +274,7 @@ DEPENDENCIES
   cancan (= 1.6.7)
   capybara (= 1.1.2)
   carrierwave
+  carrierwave_direct
   coffee-rails (~> 3.2.1)
   devise (= 2.1.0)
   email_spec (= 1.2.1)
