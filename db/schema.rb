@@ -11,7 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530185724) do
+
+ActiveRecord::Schema.define(:version => 20130611205649) do
+
 
   create_table "characters", :force => true do |t|
     t.string   "name"
@@ -22,6 +24,11 @@ ActiveRecord::Schema.define(:version => 20130530185724) do
     t.integer  "user_id"
     t.integer  "twitter_character_id"
     t.integer  "source_material_id"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+    t.string   "image"
   end
 
   add_index "characters", ["source_material_id"], :name => "index_characters_on_source_material_id"
@@ -82,6 +89,11 @@ ActiveRecord::Schema.define(:version => 20130530185724) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.boolean  "admin",                  :default => false
+    t.string   "twitter_id"
+    t.string   "twitter_screen_name"
+    t.string   "twitter_display_name"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

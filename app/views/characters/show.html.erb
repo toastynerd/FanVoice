@@ -1,6 +1,6 @@
 <div id="character" >
 <h2><%= @character.name %></h2>
-<span id="author">Created by <%= @character.user.email %></span>
+<span id="author">Created by <%= @character.user %></span>
 
 <p id="notice"><%= notice %></p>
 
@@ -13,7 +13,9 @@
   <b>Handle:</b>
   <%= @character.handle %>
 </p>
-
+  <div class="character_profile">
+  <%= image_tag @character.image_url(:thumb).to_s if @character.image? %>
+  </div>
 
 <%= link_to "New Tweet", new_source_material_character_tweet_path(@source_material, @character), :class => "button" %>
 <%= link_to "Add Twitter Account", "/auth/twitter", :class => "button" %>

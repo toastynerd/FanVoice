@@ -1,0 +1,2 @@
+# class UploadCharacterPhoto
+# end

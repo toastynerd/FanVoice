@@ -7,7 +7,8 @@ FanVoice::Application.routes.draw do
     end
   end
 
-  devise_for :users, :controllers => { :registrations => "registrations" }
+  devise_for :users, :controllers => { :registrations => "registrations",
+             :omniauth_callbacks => "omniauth_callbacks" }
   get '/awaiting_confirmation',
     :to => "users#confirmation",
     :as => 'confirm_user'
@@ -24,10 +25,14 @@ FanVoice::Application.routes.draw do
   end
 
   #oauth and twitter
-  match 'auth/:provider/callback', to: "twitter_characters#create"
+  match 'auth/:twitter/callback', to: "twitter_characters#create"
+  match 'auth/:facebook/callback', to: "devise/sessions#index"
   match 'auth/failure', to: redirect('/')
 
-  mount Resque::Server, :at => "/resque"
+  #resque background task monitor available for only admins needs to be added
+
+   mount Resque::Server, :at => "/resque"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

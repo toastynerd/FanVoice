@@ -1,8 +1,14 @@
-<%= simple_form_for [@source_material, @character] do |f| %>
-
+<%= simple_form_for [@source_material, @character], :html => { :multipart => true } do |f| %>
+    <%= f.error_notification %>
     <%= f.input :name %>
     <%= f.input :bio %>
     <%= f.input :handle %>
+     <p>
+    <%= f.file_field :image, input_html: {id: "profile_pic"} %>
+    </p>
+    <%= f.label :remote_image_url, "or image URL:" %>
+    <%= f.input :remote_image_url %>
+
 
     <%= f.submit class: "small button success radius" %>
 

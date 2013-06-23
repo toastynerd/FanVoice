@@ -31,8 +31,12 @@ class CharactersController < ApplicationController
     @character.user = current_user
 
     if @character.save
-      flash[:notice] = "Character was successfully created."
-      redirect_to [@source_material, @character]
+      if params[:character][:image].present?
+        render :crop
+        else
+        flash[:notice] = "Character was successfully created."
+        redirect_to [@source_material, @character]
+      end
     else
       flash[:alert] = "Character has not been created."
       render :action => "new"
@@ -42,8 +46,12 @@ class CharactersController < ApplicationController
   def update
 
     if @character.update_attributes(params[:character])
-      flash[:notice] = "Character updated."
-      redirect_to [@source_material, @character]
+      if params[:character][:image].present?
+        render :crop
+        else
+        flash[:notice] = "Character updated."
+        redirect_to [@source_material, @character]
+      end
     else
       flash[:alert] = "Character not updated, please check fields."
       render :action => "edit"

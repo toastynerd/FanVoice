@@ -8,8 +8,8 @@ gem 'simple_form'
 #authentication / authorization
 gem 'devise', '2.1.0'
 gem 'cancan', '1.6.7'
+gem 'pg', group: :production
 
-gem 'sqlite3'
 
 #combining all rake tasks into one file
 gem 'foreman'
@@ -22,8 +22,17 @@ gem 'resque-scheduler'
 gem 'omniauth-twitter'
 gem 'twitter'
 
+#gem for facebook authentication
+gem 'omniauth-facebook'
+
 #environment variables
 gem 'figaro'
+
+#file uploading
+gem "rmagick"
+gem "carrierwave"
+gem "fog", "~> 1.3.1"
+gem "carrierwave_direct"
 
 # pry debugging for test and dev
 group :test, :development do
@@ -31,6 +40,8 @@ group :test, :development do
   gem 'pry-doc'
   gem 'pry-debugger'
   gem 'launchy'
+  gem 'sqlite3'
+
 end
 
 # in production environments by default.
@@ -43,6 +54,8 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation', '~> 4.0.0'
+  # For asset upload
+
 
   #for datepicker
   gem 'jquery-ui-rails'
