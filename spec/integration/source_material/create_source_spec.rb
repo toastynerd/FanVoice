@@ -23,8 +23,8 @@ feature "create a new source material" do
 
     click_button "Create Source material"
     page.should have_content("Could not create source.")
-    page.should have_content("Title can't be blank")
-    page.should have_content("Genre can't be blank")
-    page.should have_content("Description can't be blank")
+    page.should have_content("can't be blank")
+    page.should have_content("can't be blank")
+    page.should have_content("can't be blank")
   end
 end

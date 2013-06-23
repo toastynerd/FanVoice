@@ -31,6 +31,6 @@ feature 'Editing a user' do
     fill_in "Email", :with => "fakefakefake"
     click_button "Update User"
     page.should have_content("User has not been updated")
-    page.should have_content("Email is invalid")
+    page.should have_content("is invalid")
   end
 end

@@ -20,6 +20,6 @@ feature "edit a source" do
     fill_in "Title", :with => ""
     click_button "Update Source material"
     page.should have_content("Could not update source")
-    page.should have_content("Title can't be blank")
+    page.should have_content("can't be blank")
   end
 end

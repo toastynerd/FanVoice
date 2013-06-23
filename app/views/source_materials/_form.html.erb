@@ -1,13 +1,8 @@
-<%= form_for(@source_material) do |f| %>
+<%= simple_form_for(@source_material) do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :genre %>
-  <%= f.text_field :genre %>
-
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.input :title %>
+  <%= f.input :genre %>
+  <%= f.input :description %>
 
   <%= f.submit :class => "button" %>
 

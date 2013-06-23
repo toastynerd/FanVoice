@@ -6,9 +6,9 @@
     <%= image_tag  @character.image_url(:large), :id => "preview" %>
   </div>
 
-<%= simple_form_for [@source_material, @character] do |f| %>
+<%= form_for [@source_material, @character] do |f| %>
   <% %w[x y w h].each do |attribute| %>
-    <%= f.input "crop_#{attribute}" %>
+    <%= f.text_field "crop_#{attribute}" %>
   <% end %>
   <div class="actions">
     <%= f.submit "Crop" %>

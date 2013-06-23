@@ -20,7 +20,7 @@ feature "Creating Users" do
     fill_in "Password", :with => "password"
     click_button "Create User"
     page.should have_content("User has not been created.")
-    page.should have_content("Email can't be blank")
+    page.should have_content("can't be blank")
   end
   scenario "Creating an admin user" do
     fill_in "Email", :with => "admin@example.com"
