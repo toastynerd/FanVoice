@@ -16,7 +16,7 @@
 
 
 <%= link_to "New Tweet", new_source_material_character_tweet_path(@source_material, @character), :class => "button" %>
-<%= link_to "Add Twitter Account", "/auth/twitter", :class => "button" %></br>
+<%= link_to "Add Twitter Account", "/auth/twitter", :class => "button" %>
 <% authorized?("edit characters", @source_material) do %>
   <%= link_to "Edit Character", [:edit, @source_material, @character], :class => "button" %>
 <% end %>
