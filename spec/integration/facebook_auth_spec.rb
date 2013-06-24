@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 feature 'Facebook Auth' do
   before do
     OmniAuth.config.mock_auth[:facebook] = {
@@ -7,7 +8,7 @@ feature 'Facebook Auth' do
           "uid" => '12345',
           "email" => 'shenst1@gmail.com',
           "name" => "Andrew Shenstone",
-          "image => "http://graph.facebook.com/1234567/picture?type=square"
+          "image" => "http://graph.facebook.com/1234567/picture?type=square"
         }
       }
     }
