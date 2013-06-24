@@ -8,7 +8,7 @@ class CharactersController < ApplicationController
 
 
   def index
-    @characters = Characters.all
+    @characters = Character.all
   end
 
 
@@ -75,7 +75,7 @@ private
     redirect_to root_path
   end
   def find_character
-    @character = @source_material.characters.find(params[:id])
+    @character = Character.find(params[:id])
   end
   def authorize_create!
     if !current_user.admin? && cannot?("create characters".to_sym, @source_material)

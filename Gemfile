@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 
 #get form error messages
 gem 'simple_form'
+gem 'dynamic_form'
 
 #authentication / authorization
 gem 'devise', '2.1.0'

@@ -3,6 +3,7 @@
     <%= f.input :name %>
     <%= f.input :bio %>
     <%= f.input :handle %>
+    <%= f.input :source_material_id, collection: SourceMaterial.all%>
      <p>
     <%= f.file_field :image, input_html: {id: "profile_pic"} %>
     </p>

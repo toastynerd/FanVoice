@@ -20,7 +20,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       flash[:notice] = "Tweet Scheduled!"
       Resque.enqueue_at(@tweet.post_at, SendToTwitter, @tweet.id, @character.id)
-      redirect_to [@source_material, @character, @tweet]
+      redirect_to [@character, @tweet]
     else
       flash[:alert] = "Could not created tweet."
       render :action => "new"
@@ -38,7 +38,7 @@ class TweetsController < ApplicationController
   def update
     if @tweet.update_attributes(params[:tweet])
       flash[:notice]="Tweet has been updated."
-      redirect_to [@source_material, @character, @tweet]
+      redirect_to [@character, @tweet]
     else
       flash[:alert]="Could not update tweet"
       render :action => "new"
@@ -48,13 +48,12 @@ class TweetsController < ApplicationController
   def destroy
     @tweet.destroy
     flash[:notice]="Tweet has been destroyed."
-    redirect_to [@source_material, @character]
+    redirect_to @character
   end
 
 private
   def find_character
     @character = Character.find(params[:character_id])
-    @source_material = SourceMaterial.find(@character.source_material_id)
   end
 
   def find_tweet
@@ -64,7 +63,7 @@ private
   def authorize_modify!
     if !current_user.admin? && cannot?(:"modify tweets", @tweet)
       flash[:alert]="You cannot modify this tweet"
-      redirect_to [@source_material, @character]
+      redirect_to @character
     end
   end
 end
