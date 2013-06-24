@@ -1,7 +1,6 @@
 class CharactersController < ApplicationController
 
   before_filter :authenticate_user!
-  before_filter :find_source_material
   before_filter :find_character, :only => [:show, :edit, :update, :destroy]
   before_filter :authorize_create!, :only => [:new, :create]
   before_filter :authorize_update!, :only => [:edit, :update]
@@ -9,25 +8,27 @@ class CharactersController < ApplicationController
 
 
   def index
-    @characters = @source_material.characters.all
+    @characters = Characters.all
   end
 
 
   def show
+    #
   end
 
 
   def new
-    @character = @source_material.characters.build
+    @character = Character.new
   end
 
 
   def edit
+    #
   end
 
 
   def create
-    @character = @source_material.characters.build(params[:character])
+    @character =  Character.new(params[:character])
     @character.user = current_user
 
     if @character.save
@@ -35,7 +36,7 @@ class CharactersController < ApplicationController
         render :crop
         else
         flash[:notice] = "Character was successfully created."
-        redirect_to [@source_material, @character]
+        redirect_to @character
       end
     else
       flash[:alert] = "Character has not been created."
@@ -50,7 +51,7 @@ class CharactersController < ApplicationController
         render :crop
         else
         flash[:notice] = "Character updated."
-        redirect_to [@source_material, @character]
+        redirect_to @character
       end
     else
       flash[:alert] = "Character not updated, please check fields."

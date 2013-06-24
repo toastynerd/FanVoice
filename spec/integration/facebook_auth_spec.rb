@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require 'spec_helper'
 
 feature 'Facebook Auth' do

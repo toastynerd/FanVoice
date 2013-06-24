@@ -18,10 +18,9 @@ FanVoice::Application.routes.draw do
 
   root :to => "source_materials#index"
 
-  resources :source_materials do
-    resources :characters do
-      resources :tweets
-    end
+  resources :source_materials 
+  resources :characters do
+    resources :tweets
   end
 
   #oauth and twitter

@@ -6,14 +6,14 @@
   <%= link_to "Delete Source Material", @source, :method => :delete, :confirm => "Are you sure?", :class => "button" %>
   <% end %>
   <% authorized?("create characters".to_sym, @source_material) do %>
-    <%= link_to "New Character", new_source_material_character_path(@source_material), :class => "button" %>
+    <%= link_to "New Character", new_character_path, :class => "button" %>
   <% end %>
 
 
   <ul id= "characters" class="panel">
     <% @source_material.characters.each do |character| %>
     <li>
-      <%= link_to character.name, [@source_material, character] %>
+      <%= link_to character.name, character %>
     </li>
     <% end %>
   </ul>
