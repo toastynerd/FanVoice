@@ -18,6 +18,38 @@
         1,
         57,
         null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        2,
+        0,
+        0,
+        0,
+        null,
+        null,
+        2,
+        null,
+        null,
+        1,
+        166,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
         null,
         null
       ],
@@ -377,6 +409,22 @@
         null,
         null
       ],
+      "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/controllers/omniauth_callbacks_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null
+      ],
       "/Users/andrewshenstone/Dropbox/Ruby on Rails Silver course/Code/FanVoice/app/controllers/registrations_controller.rb": [
         1,
         null,
@@ -641,6 +689,6 @@
         null
       ]
     },
-    "timestamp": 1372012675
+    "timestamp": 1372013974
   }
 }
