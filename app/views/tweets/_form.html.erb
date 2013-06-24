@@ -1,4 +1,5 @@
 <%= form_for [@source_material, @character, @tweet] do |f| %>
+  <%= f.error_messages  %>
 
   <%= f.label :body %>
   <%= f.text_field :body %>

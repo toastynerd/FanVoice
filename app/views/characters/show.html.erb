@@ -28,4 +28,16 @@
         :method => :delete,
        :confirm => "Are you sure you want to delete this character?", :class => "button"%>
 <% end %></br>
+
+<div class="panel large-10" id="tweets">
+  <% @character.tweets.each do |tweet| %>
+    <div id="<%= tweet.id  %>">
+      Tweet: <%= tweet.body %></br>
+      Scheduled for:  <%= tweet.post_at %></br>
+      <%= link_to "edit", [:edit, @source_material, @character, tweet], :class => "button" %>
+      <%= link_to "destroy", [@source_material, @character, tweet], :method => :delete,
+        :confirm => "Are you sure?", :class => "button"  %></br>
+    </div>
+  <% end %>
+</div>
 <%= link_to 'Back', @source_material %>

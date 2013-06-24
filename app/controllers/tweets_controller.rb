@@ -2,8 +2,10 @@ require 'resque'
 require 'resque_scheduler'
 
 class TweetsController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :find_character
   before_filter :find_tweet, :only => [:show, :edit, :update, :destroy]
+  before_filter :authorize_modify!, :only => [:edit, :update, :destroy]
 
   def index
     @tweets = @character.tweets.find(:all, :conditions => ['post_at >= ?', Time.now], :order => "post_at")
@@ -35,7 +37,7 @@ class TweetsController < ApplicationController
 
   def update
     if @tweet.update_attributes(params[:tweet])
-      flash[:notice]="Tweet has been udpated."
+      flash[:notice]="Tweet has been updated."
       redirect_to [@source_material, @character, @tweet]
     else
       flash[:alert]="Could not update tweet"
@@ -57,5 +59,12 @@ private
 
   def find_tweet
     @tweet = Tweet.find(params[:id])
+  end
+
+  def authorize_modify!
+    if !current_user.admin? && cannot?(:"modify tweets", @tweet)
+      flash[:alert]="You cannot modify this tweet"
+      redirect_to [@source_material, @character]
+    end
   end
 end
