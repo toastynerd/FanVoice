@@ -9,7 +9,7 @@ gem 'simple_form'
 gem 'devise', '2.1.0'
 gem 'cancan', '1.6.7'
 gem 'pg', group: :production
-
+gem 'unicorn'
 
 #combining all rake tasks into one file
 gem 'foreman'
