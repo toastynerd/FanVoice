@@ -16,9 +16,9 @@ FanVoice::Application.routes.draw do
      :to => 'admin/permissions#update',
      :as => :update_user_permissions
 
-  root :to => "source_materials#index"
+  root :to => "characters#index"
 
-  resources :source_materials 
+  resources :source_materials
   resources :characters do
     resources :tweets
   end
@@ -30,7 +30,7 @@ FanVoice::Application.routes.draw do
 
   #resque background task monitor available for only admins needs to be added
 
-   mount Resque::Server, :at => "/resque"
+  mount Resque::Server, :at => "/resque"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

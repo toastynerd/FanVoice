@@ -6,7 +6,7 @@ class CharactersController < ApplicationController
   before_filter :authorize_create!, :only => [:new, :create]
   before_filter :authorize_update!, :only => [:edit, :update]
   before_filter :authorize_delete!, :only => :destroy
-
+  layout "homelanding", :only => :index
 
   def index
     @characters = Character.all
