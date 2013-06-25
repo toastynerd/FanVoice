@@ -24,16 +24,17 @@
   <body>
   <div class="row">
       <%= render "layouts/header" %>
+  </div>
 
-    <div class="large-10 large-centered columns">
+    <div class="row">
+      <div class="large-10 large-centered columns">
       <% flash.each do |key, value| %>
         <div class="flash" id="<%= key %>">
           <%= value %>
         </div>
        <% end %>
-
-
-    <%= yield %>
+     <%= yield %>
+    </div>
     <%= render "layouts/footer" %>
     </div>
   </div>
