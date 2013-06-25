@@ -22,22 +22,33 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
-  <div class="row">
-    <div class="large-8 columns">
-      <h1>FOLLOW THE CONVERSATION OR TWEET TODAY</h1>
-      <%= yield %>
-      <!-- I believe it will yield to the characters index view, could create a partial for the grid too. -->
+    <div class="row">
+      <%= render "layouts/header" %>
     </div>
-    <div class="large-4 columns">
-      <h2>THEIR VOICE IS YOUR VOICE</h2>
-        <h3>FAN VOICE IS THE EASIEST PLACE TO SPEAK AS YOUR FAVORITE FICTIONAL CHARACTER.</h3>
-        <%= link_to "SIGN IN WITH FACEBOOK",
-                   user_omniauth_authorize_path(:facebook), {
-                   :id => "sign_in_with_facebook", :class =>"large button" } %>
-
-        <%= image_tag "New-logo-black-sword.png" %>
+    <div class="row">
+      <div class="large-9 columns">
+        <br><br>
+        <%= image_tag "Follow the Conversation or Tweet Today.png" %>
+        <%= yield %>
+        <!-- I believe it will yield to the characters index view, could create a partial for the grid too. -->
       </div>
+      <div class="large-3 columns">
+        <h2>THEIR VOICE IS YOUR VOICE</h2>
+          <h4>FAN VOICE IS THE EASIEST PLACE TO SPEAK AS YOUR FAVORITE FICTIONAL CHARACTER.</h4>
+          <h4>REACH AN AUDIENCE, BE CREATIVE, AND GET CLOSER TO THE FANTASY</h4>
+          <%= link_to "SIGN IN WITH FACEBOOK",
+                     user_omniauth_authorize_path(:facebook), {
+                     :id => "sign_in_with_facebook", :class =>"large button" } %>
+            <%= simple_form_for("user", :url => user_session_path) do |f| %>
+              <%= f.input :email %>
+              <%= f.input :password %>
+              <%= f.input :remember_me  %>
+              <%= f.submit 'Sign in' %>
+              <%= link_to "Forgot your password?", new_password_path('user') %>
+            <% end %>
+
+          <%= image_tag "New-logo-black-sword.png" %>
+        </div>
     </div>
   </body>
 </html>

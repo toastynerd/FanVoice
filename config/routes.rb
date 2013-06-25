@@ -16,7 +16,8 @@ FanVoice::Application.routes.draw do
      :to => 'admin/permissions#update',
      :as => :update_user_permissions
 
-  root :to => "characters#index"
+  root :to => "users#dashboard"
+
 
   resources :source_materials
   resources :characters do
