@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
 
   before_filter :authenticate_user!, :except => :index
   before_filter :find_character, :only => [:show, :edit, :update, :destroy]
-  before_filter :find_source_material, :except => [:new, :create]
+  before_filter :find_source_material, :except => [:index, :new, :create]
   before_filter :authorize_create!, :only => [:new, :create]
   before_filter :authorize_update!, :only => [:edit, :update]
   before_filter :authorize_delete!, :only => :destroy
