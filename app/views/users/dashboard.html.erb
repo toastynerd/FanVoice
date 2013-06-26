@@ -11,7 +11,13 @@
   <div id="all"class="button source">All</div></br>
    <% @characters.each do |character|  %>
      <div class="source_<%= character.source_material_id %> character">
-       <%= link_to character.name, character %>
+        <ul class="large-block-grid-6">
+          <li>
+            <%= link_to image_tag(character.image_url(:thumb).to_s), character if character.image? %>
+            <%= link_to "Follow @#{character.handle}", "https://twitter.com/#{character.handle}", {:class => "twitter-follow-button", "data-show-count" => "false", "data-lang" => "en"} %>
+          </li>
      </div>
+
    <% end %>
+
 </div>
