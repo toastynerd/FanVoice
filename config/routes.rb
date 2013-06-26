@@ -15,9 +15,8 @@ FanVoice::Application.routes.draw do
   put '/admin/users/:user_id/permissions',
      :to => 'admin/permissions#update',
      :as => :update_user_permissions
-  namespace :user do
-    root :to => "users#dashboard"
-  end
+
+  match 'users' => 'users#dashboard', :as => "user_root"
 
   root :to => "users#dashboard"
 

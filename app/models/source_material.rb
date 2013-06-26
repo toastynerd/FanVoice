@@ -3,6 +3,7 @@ class SourceMaterial < ActiveRecord::Base
   has_many :characters, :dependent => :delete_all
 
   validates :title, :presence => true
+  validates :title, :uniqueness => true
   validates :genre, :presence => true
   validates :description, :presence => true
 

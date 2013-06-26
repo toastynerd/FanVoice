@@ -11,14 +11,14 @@
     <h3 class="subheader" align=center>  or </h3>
     <hr noshade size=4>
     <br>
-    <%= simple_form_for("user", :url => user_session_path) do |f| %>
+    <%= simple_form_for("user", :url => user_registration_path) do |f| %>
       <%= f.input :email %>
       <%= f.input :password %>
-      <%= f.input :remember_me  %>
-      <%= f.submit 'Sign in' %>
+      <%= f.input :password_confirmation %>
+      <%= f.submit 'Sign up' %>
       <%= link_to "Forgot your password?", new_password_path('user') %>
     <% end %>
-  </div>
+</div>
 
 
 

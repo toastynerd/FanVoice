@@ -3,22 +3,15 @@
 </div>
 
 <div class="small-9 columns">
-<div class='contain-to-grid'>
-<nav class="top-bar">
-    <ul class="title-area">
-      <!-- Title Area -->
-      <li class ="name">
-      </li>
-
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
-    <section class="top-bar-section">
-    <!-- Left Nav Section -->
-      <ul class="left">
-      </ul>
-      <!-- Right Nav Section -->
-      <ul class="right">
-      </ul>
-  </section>
-  </nav>
+  <% @source_materials.each do |source| %>
+    <div id="source_<%= source.id %>" class="button source">
+      <%= source.title %>
+  </div>
+  <% end %>
+  <div id="all"class="button source">All</div></br>
+   <% @characters.each do |character|  %>
+     <div class="source_<%= character.source_material_id %> character">
+       <%= link_to character.name, character %>
+     </div>
+   <% end %>
 </div>

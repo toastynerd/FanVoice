@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def dashboard
+    @source_materials = SourceMaterial.all
+    @characters = Character.all
     #render the dashboard view
   end
 

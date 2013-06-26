@@ -1,5 +1,9 @@
-$(document).ready(->
-  $("a.show-characters").on 'click', (e) ->
-    $(this).next().slideToggle('slow')
-    console.log("show characters")
-)
+$ ->
+  $(document).on "click", '.source', ->
+    source_id_class = "." + @.id
+    if @.id == "all"
+      $('.character').show()
+      return
+    $('.character').hide()
+    $(source_id_class).show()
+
