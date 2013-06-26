@@ -6,7 +6,7 @@
     <%= image_tag  @character.image_url(:large), :id => "preview" %>
   </div>
 
-<%= form_for [@source_material, @character] do |f| %>
+<%= form_for [@character] do |f| %>
   <% %w[x y w h].each do |attribute| %>
     <%= f.text_field "crop_#{attribute}" %>
   <% end %>

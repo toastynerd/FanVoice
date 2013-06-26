@@ -1,0 +1,8 @@
+<ul class="large-block-grid-4">
+
+<% @characters.each do |character| %>
+    <li>
+      <%= image_tag character.image_url(:thumb).to_s if character.image? %>
+      <%= link_to "Follow @#{character.handle}", "https://twitter.com/#{character.handle}", {:class => "twitter-follow-button", "data-show-count" => "false", "data-lang" => "en"} %>
+    </li>
+<% end %>
