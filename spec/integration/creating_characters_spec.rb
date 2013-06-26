@@ -1,44 +1,27 @@
 require 'spec_helper'
-feature "Creating Characters" do
-  before do
 
-    source_material = Factory(:source_material, title: "Game of Thrones")
-    user = Factory(:confirmed_user, :email => "test@fanvoice.com")
-    define_permission!(user, "create characters", source_material)
-    define_permission!(user, "view", source_material)
-    sign_in_as!(user)
+feature "Creating Characters" do
+  let!(:source_material) {Factory(:source_material)}
+  before do
+    sign_in_as!(Factory(:admin_user))
     visit '/'
-    click_link "Game of Thrones"
+    click_link source_material.title
     click_link "New Character"
-    within("h2") {page.should have_content("New Character")}
   end
+
   scenario "Creating a character" do
     fill_in "Name", :with => "Non-standards compliance"
     fill_in "Bio", :with => "My pages are ugly!"
     fill_in "Handle", :with => "shenst1"
+    select(source_material.title, :from => "Source material")
     click_button "Create Character"
     page.should have_content("Character was successfully created.")
-    within("#character #author") do
-      page.should have_content("Created by test@fanvoice.com")
-    end
   end
+
   scenario "Creating a character without valid attributes fails" do
     click_button "Create Character"
     page.should have_content("Character has not been created.")
     page.should have_content("can't be blank")
-    page.should have_content("can't be blank")
-    page.should have_content("can't be blank")
   end
-  # scenario "Uploading a photo as an attachment to a character" do
-  #   fill_in "Name", :with => "Non-standards compliance"
-  #   fill_in "Bio", :with => "My pages are ugly!"
-  #   fill_in "Handle", :with => "shenst1"
-  #   attach_file "profile_pic", "spec/fixtures/hermione.jpg"
-  #   click_button "Create Character"
-  #   page.should have_content("Character was successfully created.")
-  #   within("#character .character_profile") do
-  #     page.should have_content("hermione.jpg")
-  #   end
-  # end
 
 end

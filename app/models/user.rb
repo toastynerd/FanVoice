@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :email, :password, :admin, :as => :admin
   has_many :permissions
+
+  has_many :tweets
+
   def to_s
   "#{email} (#{admin? ? "Admin" : "User"})"
   end

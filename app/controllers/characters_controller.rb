@@ -2,6 +2,7 @@ class CharactersController < ApplicationController
 
   before_filter :authenticate_user!, :except => :index
   before_filter :find_character, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_source_material, :except => [:new, :create]
   before_filter :authorize_create!, :only => [:new, :create]
   before_filter :authorize_update!, :only => [:edit, :update]
   before_filter :authorize_delete!, :only => :destroy
@@ -19,6 +20,7 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    :find_source_material
   end
 
 
@@ -42,10 +44,10 @@ class CharactersController < ApplicationController
       flash[:alert] = "Character has not been created."
       render :action => "new"
     end
+    :find_source_material
   end
 
   def update
-
     if @character.update_attributes(params[:character])
       if params[:character][:image].present?
         render :crop
@@ -63,36 +65,40 @@ class CharactersController < ApplicationController
   def destroy
     @character.destroy
     flash[:notice] = "Character has been deleted."
-    redirect_to @source_material
+    redirect_to root_path 
   end
 
 private
   def find_source_material
-    @source_material = SourceMaterial.for(current_user).find(params[:source_material_id])
+    @source_material = SourceMaterial.for(current_user).find(@character.source_material.id)
     rescue ActiveRecord::RecordNotFound
     flash[:alert] = "The source_material you were looking " +
                     "for could not be found."
     redirect_to root_path
   end
+  
   def find_character
     @character = Character.find(params[:id])
   end
+
   def authorize_create!
     if !current_user.admin? && cannot?("create characters".to_sym, @source_material)
       flash[:alert] = "You cannot create characters on this source_material."
-      redirect_to @source_material
+      redirect_to root_path
     end
   end
+  
   def authorize_update!
-    if !current_user.admin? && cannot?("edit characters".to_sym, @source_material)
+    if !current_user.admin? && cannot?("edit characters".to_sym, @character)
       flash[:alert] = "You cannot edit characters on this source_material."
-      redirect_to @source_material
+      redirect_to root_path
     end
   end
+    
   def authorize_delete!
-  if !current_user.admin? && cannot?(:"delete characters", @source_material)
-    flash[:alert] = "You cannot delete characters from this source_material."
-    redirect_to @source_material
+    if !current_user.admin? && cannot?(:"delete characters", @character)
+      flash[:alert] = "You cannot delete characters from this source_material."
+      redirect_to root_path
+    end
   end
-end
 end
