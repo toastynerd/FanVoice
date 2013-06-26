@@ -33,22 +33,17 @@
         <!-- I believe it will yield to the characters index view, could create a partial for the grid too. -->
       </div>
       <div class="large-3 columns">
-        <h2>THEIR VOICE IS YOUR VOICE</h2>
-          <h4>FAN VOICE IS THE EASIEST PLACE TO SPEAK AS YOUR FAVORITE FICTIONAL CHARACTER.</h4>
-          <h4>REACH AN AUDIENCE, BE CREATIVE, AND GET CLOSER TO THE FANTASY</h4>
-          <%= link_to "SIGN IN WITH FACEBOOK",
-                     user_omniauth_authorize_path(:facebook), {
-                     :id => "sign_in_with_facebook", :class =>"large button" } %>
-            <%= simple_form_for("user", :url => user_session_path) do |f| %>
-              <%= f.input :email %>
-              <%= f.input :password %>
-              <%= f.input :remember_me  %>
-              <%= f.submit 'Sign in' %>
-              <%= link_to "Forgot your password?", new_password_path('user') %>
-            <% end %>
+        <br>
+        <a href='#' data-reveal-id="loginscreen" class="radius large button success">Write Your First Tweet >></a>
+        <h2 class="subheader">THEIR VOICE IS YOUR VOICE</h2>
+          <h3 class="subheader">FAN VOICE IS THE EASIEST PLACE TO SPEAK AS YOUR FAVORITE FICTIONAL CHARACTER.</h3>
+          <h3 class="subheader">REACH AN AUDIENCE, BE CREATIVE, AND GET CLOSER TO THE FANTASY</h3>
+      </div>
+    <div id="loginscreen" class="reveal-modal medium">
+      <%= render "users/signupmodal" %>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
 
-          <%= image_tag "New-logo-black-sword.png" %>
-        </div>
     </div>
   </body>
 </html>

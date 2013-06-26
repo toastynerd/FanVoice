@@ -1,0 +1,27 @@
+<div class="small-7 columns">
+  <%= image_tag("Sword through blue bird.png", :align =>"center", :class =>'global-radius' )%>
+</div>
+<div class="small-5 columns">
+  <h3 class="subheader"> Don't worry, we won't touch your Facebook or Twitter account. <br><br>Just Hermione's. </h3><br>
+  <%= link_to image_tag("fb_connect.png"),
+                     user_omniauth_authorize_path(:facebook), {
+                     :id => "sign_in_with_facebook" } %>
+     <br>
+     <hr noshade size=4 >
+    <h3 class="subheader" align=center>  or </h3>
+    <hr noshade size=4>
+    <br>
+    <%= simple_form_for("user", :url => user_session_path) do |f| %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :remember_me  %>
+      <%= f.submit 'Sign in' %>
+      <%= link_to "Forgot your password?", new_password_path('user') %>
+    <% end %>
+  </div>
+
+
+
+
+
+
