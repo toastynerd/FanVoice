@@ -27,7 +27,7 @@ FanVoice::Application.routes.draw do
   end
 
   #oauth and twitter
-  match 'auth/:twitter/callback', to: "twitter_characters#create"
+  match 'users/auth/:twitter/callback', to: "twitter_characters#create"
   match 'auth/:facebook/callback', to: "devise/sessions#index"
   match 'auth/failure', to: redirect('/')
 

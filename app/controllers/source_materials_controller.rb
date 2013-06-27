@@ -1,5 +1,5 @@
 class SourceMaterialsController < ApplicationController
-  before_filter :authorize_admin!, :except => [:index, :show]
+  before_filter :authorize_admin!
   before_filter :authenticate_user!, :only => [:index, :show]
   before_filter :find_source, :only => [:show, :edit, :update, :destroy]
 
