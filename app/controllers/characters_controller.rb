@@ -66,7 +66,7 @@ class CharactersController < ApplicationController
   def destroy
     @character.destroy
     flash[:notice] = "Character has been deleted."
-    redirect_to root_path 
+    redirect_to root_path
   end
 
 private
@@ -77,7 +77,7 @@ private
                     "for could not be found."
     redirect_to root_path
   end
-  
+
   def find_character
     @character = Character.find(params[:id])
   end
@@ -88,14 +88,14 @@ private
       redirect_to root_path
     end
   end
-  
+
   def authorize_update!
     if !current_user.admin? && cannot?("edit characters".to_sym, @character)
       flash[:alert] = "You cannot edit characters on this source_material."
       redirect_to root_path
     end
   end
-    
+
   def authorize_delete!
     if !current_user.admin? && cannot?(:"delete characters", @character)
       flash[:alert] = "You cannot delete characters from this source_material."

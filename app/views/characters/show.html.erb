@@ -3,11 +3,6 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Bio:</b>
-  <%= @character.bio %>
-  <%= simple_format(@character.bio) %>
-</p>
   <div class="character_profile">
     <div class="row">
       <div class="large-3 columns">
@@ -31,12 +26,7 @@
           <%= @character.bio %>
         </p>
       </div>
-    </div>
-  </div>
-
-
-<div class="panel large-12" id="tweets">
-  <% @character.tweets.each do |tweet| %>
+      <% @character.tweets.each do |tweet| %>
     <div id="<%= tweet.id  %>">
       Tweet: <%= tweet.body %></br>
       Scheduled for:  <%= tweet.post_at %></br>
@@ -44,8 +34,11 @@
       <%= link_to "destroy", [@character, tweet], :method => :delete,
         :confirm => "Are you sure?", :class => "button"  %></br>
     </div>
-  <% end %>
-</div>
+    <% end %>
+    </div>
+  </div>
+
+
 
 
 
