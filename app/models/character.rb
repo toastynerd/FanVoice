@@ -21,4 +21,5 @@ class Character < ActiveRecord::Base
   validates :bio, presence: :true
   validates :name, presence: :true
   validates :handle, presence: :true
+  validates :source_material_id, presence: :true
 end

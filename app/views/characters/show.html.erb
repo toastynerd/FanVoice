@@ -9,18 +9,19 @@
 
         <%= link_to "Follow @#{@character.handle}", "https://twitter.com/#{@character.handle}", {:class => "twitter-follow-button", "data-show-count" => "false", "data-lang" => "en"} %><br><br>
         <%= link_to "New Tweet", new_character_tweet_path(@character), :class => "button success" %>
-        <%= link_to "Add Twitter Account", "/auth/twitter", :class => "button" %>
+        <%= link_to "Add Twitter Account", "/auth/:twitter", :class => "button" %>
         <%= link_to "Edit Character", [:edit, @character], :class => "button" %>
         <%= link_to "Delete Character",
         @character,
         :method => :delete,
         :confirm => "Are you sure you want to delete this character?", :class => "button"%></br>
+        <%= link_to "New Character", new_character_path, :class => "button" %>
+
       </div>
       <div class="large-9 columns">
         <p>
           <b>Bio:</b>
           <%= @character.bio %>
-          <%= simple_format(@character.bio) %>
         </p>
       </div>
     </div>
