@@ -1,2 +1,8 @@
-<h2>New Tweet for <%= @character.name %></h2>
-<%= render "form" %>
+<div class="small-4 columns">
+  <%= image_tag @character.image_url(:thumb).to_s if @character.image? %>
+  <%= link_to "Follow @#{@character.handle}", "https://twitter.com/#{@character.handle}", {:class => "twitter-follow-button", "data-show-count" => "false", "data-lang" => "en"} %>
+</div>
+<div class="small-8 columns">
+  <h2>New Tweet for <%= @character.name %></h2>
+  <%= render "form" %>
+</div>
