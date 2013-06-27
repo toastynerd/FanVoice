@@ -15,7 +15,7 @@
 
         <%= link_to "Follow @#{@character.handle}", "https://twitter.com/#{@character.handle}", {:class => "twitter-follow-button", "data-show-count" => "false", "data-lang" => "en"} %><br><br>
         <%= link_to "New Tweet", new_character_tweet_path(@character), :class => "button success" %>
-        <%= link_to "Add Twitter Account", "/auth/twitter", :class => "button" %>
+        <%= link_to "Add Twitter Account", "/users/auth/twitter", :class => "button" %>
         <%= link_to "Edit Character", [:edit, @character], :class => "button" %>
         <%= link_to "Delete Character",
         @character,

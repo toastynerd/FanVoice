@@ -1,4 +1,5 @@
 class TwitterCharactersController < ApplicationController
+  before_filter :authorize_admin!
   def create
     @twitter_character = TwitterCharacter.from_omniauth(env["omniauth.auth"])
     @character = Character.find_by_handle(@twitter_character.name)
