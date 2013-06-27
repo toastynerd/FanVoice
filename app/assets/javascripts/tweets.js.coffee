@@ -7,4 +7,4 @@ $ ->
     timeFormat: 'hh:mm:ss tt'
     minDate: 0
     stepHour: 4
-    stepMinute: 0
+    stepMinute: 2
