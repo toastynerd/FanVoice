@@ -10,5 +10,10 @@ admin_user = User.create(:email => "test@fanvoice.com",
 admin_user.admin = true
 admin_user.confirm!
 
+non_admin = User.create(:email => "test_reg_user@fanvoice.com",
+                        :password => "foobar")
+non_admin.admin = false
+non_admin.confirm!
+
 SourceMaterial.create(:title => "Harry Potter", genre: "Fantasy",
                       description: "Harry, hermione and ron.")
