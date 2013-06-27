@@ -20,7 +20,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       flash[:notice] = "Tweet Scheduled!"
       Resque.enqueue_at(@tweet.post_at, SendToTwitter, @tweet.id, @character.id)
-      redirect_to [@character, @tweet]
+      redirect_to [@character]
     else
       flash[:alert] = "Could not created tweet."
       render :action => "new"
