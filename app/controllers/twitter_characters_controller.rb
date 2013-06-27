@@ -8,7 +8,7 @@ class TwitterCharactersController < ApplicationController
     @character.save
     @twitter_character.save
     @source_material = SourceMaterial.find(@character.source_material_id)
-    redirect_to [@source_material, @character]
+    redirect_to [@character]
   end
 
   def destroy

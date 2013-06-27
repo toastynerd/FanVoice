@@ -14,7 +14,7 @@
    <% @characters.each do |character|  %>
 
           <li class="source_<%= character.source_material_id %> character">
-            <%= link_to image_tag(character.image_url(:thumb).to_s), new_character_tweet_path(character) if character.image? %>
+            <%= link_to image_tag(character.image_url(:thumb).to_s), new_character_tweet_path(character), {:alt => "#{character.name}"} if character.image? %>
             <%= link_to "Follow @#{character.handle}", "https://twitter.com/#{character.handle}", {:class => "twitter-follow-button", "data-show-count" => "false", "data-lang" => "en"} %>
           </li>
    <% end %>
