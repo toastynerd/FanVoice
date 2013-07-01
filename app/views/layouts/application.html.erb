@@ -28,12 +28,16 @@
   </div>
 
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-3 columns">
+        <%= render "sidenav" %>
+      </div>
+      <div class="large-9 columns">
       <% flash.each do |key, value| %>
         <div class="flash" id="<%= key %>">
           <%= value %>
         </div>
        <% end %>
+
      <%= yield %>
     </div>
     <%= render "layouts/footer" %>
