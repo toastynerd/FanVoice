@@ -7,8 +7,8 @@ namespace :resque do
     require 'resque'
     require 'resque_scheduler'
     require 'resque/scheduler'
-    
-    Resque.redis = ENV["REDIS_SERVER"]
+
+    Resque.redis = ENV["REDISTOGO_URL"]
 
     Resque::Scheduler.dynamic = true
 
