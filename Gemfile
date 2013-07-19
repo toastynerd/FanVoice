@@ -10,6 +10,7 @@ gem 'dynamic_form'
 gem 'devise', '2.1.0'
 gem 'cancan', '1.6.7'
 gem 'pg', group: :production
+gem 'therubyracer', group: :production
 gem 'unicorn'
 
 #combining all rake tasks into one file
@@ -51,7 +52,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation', '~> 4.0'

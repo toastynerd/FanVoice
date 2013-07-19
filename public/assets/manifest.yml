@@ -1,14 +1,27 @@
 ---
+Fan Voice Banner.png: Fan Voice Banner-50d1c186d74cc9126c7d0cc6a86522fd.png
+Fan Voice Banner/index.png: Fan Voice Banner-50d1c186d74cc9126c7d0cc6a86522fd.png
+Follow the Conversation or Tweet Today.png: Follow the Conversation or Tweet Today-fb09d7ee2784dbceee1943cdd6aa991d.png
+Follow the Conversation or Tweet Today/index.png: Follow the Conversation or Tweet
+  Today-fb09d7ee2784dbceee1943cdd6aa991d.png
+New Banner 1080.jpg: New Banner 1080-9184f499c883dbe532bfe776bef7c1e3.jpg
+New Banner 1080/index.jpg: New Banner 1080-9184f499c883dbe532bfe776bef7c1e3.jpg
 New-logo-black-sword.png: New-logo-black-sword-0de620f63473b9b20a18fb751eaa8e49.png
 New-logo-black-sword/index.png: New-logo-black-sword-0de620f63473b9b20a18fb751eaa8e49.png
+Sword through blue bird.png: Sword through blue bird-b706449fe52e80f433ba1ea1994376e2.png
+Sword through blue bird/index.png: Sword through blue bird-b706449fe52e80f433ba1ea1994376e2.png
 White-Background-Bird-with-White-Sword.png: White-Background-Bird-with-White-Sword-0d5312a6c7ed9d09979259fdd1446f9b.png
 White-Background-Bird-with-White-Sword/index.png: White-Background-Bird-with-White-Sword-0d5312a6c7ed9d09979259fdd1446f9b.png
+fb_connect.png: fb_connect-f6d72314308e44206f3f5f06bed52cbd.png
+fb_connect/index.png: fb_connect-f6d72314308e44206f3f5f06bed52cbd.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
-application.js: application-36bdad89afd392a8ace69b9858f3b921.js
-application/index.js: application-36bdad89afd392a8ace69b9858f3b921.js
-application.css: application-622d357a5f77782adc6bf1841134f051.css
-application/index.css: application-622d357a5f77782adc6bf1841134f051.css
+application.js: application-474967258f42ac0c881563063348b4c2.js
+application/index.js: application-474967258f42ac0c881563063348b4c2.js
+application.css: application-5414780a6540fb6e79ee243e44be2456.css
+application/index.css: application-5414780a6540fb6e79ee243e44be2456.css
+config.rb: config-7cd653a8021e7edab25da177512fb87e.rb
+config/index.rb: config-7cd653a8021e7edab25da177512fb87e.rb
 MIT-LICENSE.txt: MIT-LICENSE-27eb1d53cc3084d067f799ff40c2f514.txt
 MIT-LICENSE/index.txt: MIT-LICENSE-27eb1d53cc3084d067f799ff40c2f514.txt
 README.md: README-33c92766fa2eefa94a76411456f233c1.md
@@ -40,8 +53,8 @@ demos/tutorial5/index.html: demos/tutorial5-ba1bef21c161ab24c2e919f2aa9fc70c.htm
 index.html: index-a000408add51334b3cf053d8928e046c.html
 Jcrop.gif: Jcrop-aededb5593856fed1e870874c80c2064.gif
 Jcrop/index.gif: Jcrop-aededb5593856fed1e870874c80c2064.gif
-jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
-jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
+jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
+jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery-ui/animated-overlay.gif: jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif
 jquery-ui/animated-overlay/index.gif: jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif
 jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/ui-bg_flat_0_aaaaaa_40x100-7d1197a52442bc56fcad60d0390f4b32.png
@@ -70,7 +83,7 @@ jquery-ui/ui-icons_888888_256x240.png: jquery-ui/ui-icons_888888_256x240-8040cfc
 jquery-ui/ui-icons_888888_256x240/index.png: jquery-ui/ui-icons_888888_256x240-8040cfcc88792375b7788feb59189eef.png
 jquery-ui/ui-icons_cd0a0a_256x240.png: jquery-ui/ui-icons_cd0a0a_256x240-d4a62216bf6f0cd0071149890763a5ff.png
 jquery-ui/ui-icons_cd0a0a_256x240/index.png: jquery-ui/ui-icons_cd0a0a_256x240-d4a62216bf6f0cd0071149890763a5ff.png
-vendor/custom.modernizr.js: vendor/custom.modernizr-5e8eab1bb829a113a74568d53df0f0c8.js
-vendor/custom/index.modernizr.js: vendor/custom.modernizr-5e8eab1bb829a113a74568d53df0f0c8.js
-vendor/zepto.js: vendor/zepto-53cc357f7993bebab67b78260a4de406.js
-vendor/zepto/index.js: vendor/zepto-53cc357f7993bebab67b78260a4de406.js
+vendor/custom.modernizr.js: vendor/custom.modernizr-2a5d65eaee4e281cdcca0cc1064c86a2.js
+vendor/custom/index.modernizr.js: vendor/custom.modernizr-2a5d65eaee4e281cdcca0cc1064c86a2.js
+vendor/zepto.js: vendor/zepto-9fd36026d7286747d52829235fea1c02.js
+vendor/zepto/index.js: vendor/zepto-9fd36026d7286747d52829235fea1c02.js

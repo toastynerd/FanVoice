@@ -88,6 +88,9 @@ ActiveRecord::Schema.define(:version => 20130626172010) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.boolean  "admin",                  :default => false
+    t.string   "twitter_id"
+    t.string   "twitter_screen_name"
+    t.string   "twitter_display_name"
     t.string   "provider"
     t.string   "uid"
   end
