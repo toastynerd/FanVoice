@@ -20,7 +20,7 @@ class CharactersController < ApplicationController
 
 
   def new
-    @character = Character.new
+    @character = Character.new(key: params[:key])
     :find_source_material
   end
 

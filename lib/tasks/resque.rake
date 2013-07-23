@@ -8,12 +8,12 @@ namespace :resque do
     require 'resque_scheduler'
     require 'resque/scheduler'
 
-    uri = URI.parse(ENV["REDISTOGO_URL"])
-    REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
-    Resque.redis = REDIS
+    Resque.redis = ENV["REDISTOGO_URL"]
 
     Resque::Scheduler.dynamic = true
 
     require 'send_to_twitter'
+
+
   end
 end

@@ -35,6 +35,7 @@ gem "rmagick"
 gem "carrierwave"
 gem "fog", "~> 1.3.1"
 gem "carrierwave_direct"
+gem "sidekiq"
 
 # pry debugging for test and dev
 group :test, :development do
