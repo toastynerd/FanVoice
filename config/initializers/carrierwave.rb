@@ -12,13 +12,13 @@ CarrierWave.configure do |config|
   # config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
   if Rails.env.test? or Rails.env.cucumber?
     CarrierWave.configure do |config|
-      config.storage = :file
+      config.storage = :fog
       config.enable_processing = false
     end
   end
   if Rails.env.development?
     CarrierWave.configure do |config|
-      config.storage = :file
+      config.storage = :fog
     end
   end
   if Rails.env.production?
