@@ -33,14 +33,9 @@ class CharactersController < ApplicationController
   def create
     @character =  Character.new(params[:character])
     @character.user = current_user
-
     if @character.save
-      if params[:character][:image].present?
-        render :crop
-        else
         flash[:notice] = "Character was successfully created."
         redirect_to @character
-      end
     else
       flash[:alert] = "Character has not been created."
       render :action => "new"
