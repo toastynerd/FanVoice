@@ -1,3 +1,32 @@
 // Place all the styles related to the characters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.character {
+
+  img {
+    border-radius: 1em;
+    -webkit-box-shadow: 4px 4px 5px #282b1f;
+    -moz-box-shadow: 4px 4px 5px #282b1f;
+    box-shadow: 4px 4px 5px #282b1f;
+    opacity: .9;
+  }
+}
+.follow {
+  text-align: center;
+  margin: 3px;
+  // background-color: rgba(93, 164, 35, 0.6);
+  -webkit-transform: translate(0, -3em);
+  -moz-transform: translate(0, -3em);
+  -o-transform: translate(0, -3em);
+  transform: translate(0, -3em);
+
+  :hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+
+  }
+}
+
