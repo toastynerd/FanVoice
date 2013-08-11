@@ -46,7 +46,7 @@ class CharactersController < ApplicationController
   def update
     if @character.update_attributes(params[:character])
       if params[:character][:image].present?
-        render :crop
+
         else
         flash[:notice] = "Character updated."
         redirect_to @character

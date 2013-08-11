@@ -1,3 +1,4 @@
+require "resque"
 class Character < ActiveRecord::Base
   attr_accessible :bio, :name, :handle, :image, :remote_image_url, :crop_x, :crop_y, :crop_w, :crop_h, :source_material_id
 
@@ -9,7 +10,7 @@ class Character < ActiveRecord::Base
   # after_update :crop_image
 
   def enqueue_image
-    ImageWorker.perform_async(id, key) if key.present?
+    Resque.enqueue(ImageWorker,id,key)
   end
 
   def image_name
