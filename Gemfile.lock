@@ -48,6 +48,8 @@ GEM
       carrierwave
       fog
       uuidtools
+    celluloid (0.14.1)
+      timers (>= 1.0.0)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.0.9)
@@ -59,6 +61,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
+    connection_pool (1.1.0)
     debugger (1.6.1)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -242,6 +245,12 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    sidekiq (2.13.0)
+      celluloid (>= 0.14.1)
+      connection_pool (>= 1.0.0)
+      json
+      redis (>= 3.0)
+      redis-namespace
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -266,6 +275,7 @@ GEM
       ref
     thor (0.18.1)
     tilt (1.4.1)
+    timers (1.1.0)
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
@@ -325,6 +335,7 @@ DEPENDENCIES
   rmagick
   rspec-rails (~> 2.11)
   sass-rails (~> 3.2.3)
+  sidekiq
   simple_form
   simplecov
   sqlite3

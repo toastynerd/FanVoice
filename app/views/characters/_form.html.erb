@@ -1,14 +1,12 @@
 <%= simple_form_for @character do |f| %>
     <%= f.error_notification %>
+    <%= f.hidden_field :key %>
     <%= f.input :name %>
     <%= f.input :bio %>
     <%= f.input :handle %>
     <%= f.input :source_material_id, collection: SourceMaterial.all%>
-     <p>
-    <%= f.file_field :image, input_html: {id: "profile_pic"} %>
-    </p>
-    <%= f.label :remote_image_url, "or image URL:" %>
-    <%= f.input :remote_image_url %>
+
+    <p> File: <% @character.image_name %> </p>
 
 
     <%= f.submit class: "small button success radius" %>

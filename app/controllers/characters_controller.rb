@@ -20,7 +20,7 @@ class CharactersController < ApplicationController
 
 
   def new
-    @character = Character.new
+    @character = Character.new(key: params[:key])
     :find_source_material
   end
 
@@ -33,14 +33,9 @@ class CharactersController < ApplicationController
   def create
     @character =  Character.new(params[:character])
     @character.user = current_user
-
     if @character.save
-      if params[:character][:image].present?
-        render :crop
-        else
         flash[:notice] = "Character was successfully created."
         redirect_to @character
-      end
     else
       flash[:alert] = "Character has not been created."
       render :action => "new"
@@ -51,7 +46,7 @@ class CharactersController < ApplicationController
   def update
     if @character.update_attributes(params[:character])
       if params[:character][:image].present?
-        render :crop
+
         else
         flash[:notice] = "Character updated."
         redirect_to @character
