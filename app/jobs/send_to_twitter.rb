@@ -10,7 +10,7 @@ class SendToTwitter
             Rails.logger.info "Sent tweet for #{@tweet.post_at} at #{Time.now} with #{@twitter_character.name}"
           end
         else
-          Rails.logger.error "Could not find twitter character for #{@character.name}"  
+          Rails.logger.error "Could not find twitter character for #{@character.name}"
         end
       else
         Rails.logger.error "Could not find character for id# #{character_id}"
