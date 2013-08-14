@@ -61,7 +61,7 @@ class CharactersController < ApplicationController
   def destroy
     @character.destroy
     flash[:notice] = "Character has been deleted."
-    redirect_to root_path
+    redirect_to @source_material
   end
 
 private

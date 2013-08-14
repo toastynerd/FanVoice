@@ -2,5 +2,6 @@
 <h1 class= "subheader">Welcome to Fan Voice's Admin: Please choose an option off the menu. <br>If you are here and think you shouldn't be, then please write to support and you will be thanked appropriately.</h1>
 <%= direct_upload_form_for @uploader do |f| %>
   <p><%= f.file_field :image %></p>
+
   <p><%= f.submit "Upload Image For New Character" %></p>
 <% end %>
