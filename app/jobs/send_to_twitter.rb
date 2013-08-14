@@ -3,6 +3,7 @@ require 'twitter'
 class SendToTwitter
   @queue = :tweet_queue
   def self.perform(tweet_id, character_id)
+    sleep 5
     if @tweet = Tweet.find(tweet_id)
       if @character = Character.find(character_id)
         if @twitter_character = TwitterCharacter.find(@character.twitter_character_id)
