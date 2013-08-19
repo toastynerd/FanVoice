@@ -1,4 +1,5 @@
 <ul class="large-block-grid-4 character">
+
 <% @characters.each do |character| %>
     <li>
       <%= image_tag character.image_url(:thumb).to_s if character.image? %>
