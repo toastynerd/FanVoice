@@ -16,11 +16,19 @@ class TweetsController < ApplicationController
   end
 
   def create
+    # add a radiobutton to send in paramaters for post now or post later
+    # if parameter is now, then call SendToTwitter.perform(@tweet.id, @character.id)
     @tweet = @character.tweets.build(params[:tweet])
     if @tweet.save
-      flash[:notice] = "Tweet Scheduled!"
-      #Resque.enqueue_at(@tweet.post_at, SendToTwitter, @tweet.id, @character.id)
-      Resque.enqueue_at(2.minutes.from_now, SendToTwitter, @tweet.id, @character.id)
+      if @tweet.post_at <= Time.now
+        SendToTwiitter.perform(@tweet.id, @character.id)
+        flash[:notice] = "Tweet Sent!"
+
+      else
+        Resque.enqueue_at(@tweet.post_at, SendToTwitter, @tweet.id, @character.id)
+        flash[:notice] = "Tweet Scheduled!"
+    end
+
       redirect_to [@character]
     else
       flash[:alert] = "Could not created tweet."
