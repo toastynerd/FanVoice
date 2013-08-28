@@ -21,7 +21,7 @@ class TweetsController < ApplicationController
     @tweet = @character.tweets.build(params[:tweet])
     if @tweet.save
       if @tweet.post_at <= Time.now
-        SendToTwiitter.perform(@tweet.id, @character.id)
+        SendToTwitter.perform(@tweet.id, @character.id)
         flash[:notice] = "Tweet Sent!"
 
       else

@@ -9,7 +9,7 @@ class Tweet < ActiveRecord::Base
 
   def set_default_time
     if post_at.nil?
-      post_at = Time.now
+      self.post_at = Time.now
     end
   end
 end
