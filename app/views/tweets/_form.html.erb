@@ -1,10 +1,13 @@
 <%= form_for [@character, @tweet] do |f| %>
   <%= f.error_messages  %>
+  <div class="body">
+    <%= f.label :body %>
+    <%= f.text_field :body %>
 
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-
+  </div>
+  <div class="schedule_tweet">
   <%= f.label :post_at %>
   <%= f.text_field :post_at, :class => "datetime" %>
   <%= f.submit :class => "button" %>
+  </div>
 <% end %>

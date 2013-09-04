@@ -1,8 +1,12 @@
-<div class="small-4 columns">
+<div class="small-6 columns">
   <%= image_tag @character.image_url(:thumb).to_s if @character.image? %>
   <%= link_to "Follow @#{@character.handle}", "https://twitter.com/#{@character.handle}", {:class => "twitter-follow-button", "data-show-count" => "false", "data-lang" => "en"} %>
+  <a class="twitter-timeline" href="https://twitter.com/hermione_quotes" data-widget-id="375321337142583296">Tweets by @hermione_quotes</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  </script>
+
 </div>
-<div class="small-8 columns">
+<div class="small-6 columns">
   <h2>New Tweet for <%= @character.name %></h2>
   <%= render "form" %>
 </div>
