@@ -3,6 +3,9 @@
 <% @characters.each do |character| %>
     <li>
       <%= image_tag character.image_url(:thumb).to_s if character.image? %>
-      <%= link_to "Follow @#{character.handle}", "https://twitter.com/#{character.handle}", {:class => "twitter-follow-button", "data-show-count" => "false", "data-lang" => "en"}%>
+      <br>
+      <div class="follow">
+        <%= link_to "Follow @#{character.handle}", "https://twitter.com/#{character.handle}", {:class => "twitter-follow-button", "data-show-count" => "false", "data-lang" => "en"}%>
+      </div>
     </li>
 <% end %>

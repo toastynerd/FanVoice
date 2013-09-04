@@ -61,6 +61,7 @@ class TweetsController < ApplicationController
   end
 
 private
+  # save and schedule
   def find_character
     @character = Character.find(params[:character_id])
   end
