@@ -20,7 +20,7 @@
         <%= link_to "New Character", new_character_path, :class => "button" %>
 
       </div>
-      <div class="large-9 columns">
+      <div class="large-9 columns tweets">
         <p>
           <b>Bio:</b>
           <%= @character.bio %>
@@ -29,9 +29,9 @@
           <div id="<%= tweet.id  %>">
           Tweet: <%= tweet.body %></br>
           Scheduled for:  <%= tweet.post_at %></br>
-          <%= link_to "edit", [:edit, @character, tweet], :class => "button" %>
+          <%= link_to "edit", [:edit, @character, tweet], :class => "button small" %>
         <%= link_to "destroy", [@character, tweet], :method => :delete,
-        :confirm => "Are you sure?", :class => "button"  %></br>
+        :confirm => "Are you sure?", :class => "button small"  %></br>
         </div>
         <% end %>
       </div>

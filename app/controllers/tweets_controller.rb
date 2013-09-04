@@ -31,7 +31,7 @@ class TweetsController < ApplicationController
 
       redirect_to [@character]
     else
-      flash[:alert] = "Could not created tweet."
+      flash[:alert] = "Could not create tweet."
       render :action => "new"
     end
   end
