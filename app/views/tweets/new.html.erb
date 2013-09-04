@@ -6,9 +6,7 @@
 
 <div class="small-6 columns character">
   <%=image_tag "badges.jpg" %>
-    <%= image_tag @character.image_url(:thumb).to_s if @character.image? %>
-
-
+  <%= image_tag @character.image_url(:thumb).to_s if @character.image? %>
 <br><br>
 <!-- begin twitter widget -->
 
