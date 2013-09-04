@@ -25,16 +25,17 @@
           <b>Bio:</b>
           <%= @character.bio %>
         </p>
-      </div>
-      <% @character.tweets.each do |tweet| %>
-    <div id="<%= tweet.id  %>">
-      Tweet: <%= tweet.body %></br>
-      Scheduled for:  <%= tweet.post_at %></br>
-      <%= link_to "edit", [:edit, @character, tweet], :class => "button" %>
-      <%= link_to "destroy", [@character, tweet], :method => :delete,
+        <% @character.tweets.each do |tweet| %>
+          <div id="<%= tweet.id  %>">
+          Tweet: <%= tweet.body %></br>
+          Scheduled for:  <%= tweet.post_at %></br>
+          <%= link_to "edit", [:edit, @character, tweet], :class => "button" %>
+        <%= link_to "destroy", [@character, tweet], :method => :delete,
         :confirm => "Are you sure?", :class => "button"  %></br>
-    </div>
-    <% end %>
+        </div>
+        <% end %>
+      </div>
+
     </div>
   </div>
 
