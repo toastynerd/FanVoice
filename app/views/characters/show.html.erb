@@ -25,6 +25,7 @@
           <b>Bio:</b>
           <%= @character.bio %>
         </p>
+
         <% @character.tweets.each do |tweet| %>
           <div id="<%= tweet.id  %>">
           Tweet: <%= tweet.body %></br>

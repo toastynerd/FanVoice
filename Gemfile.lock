@@ -136,6 +136,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.8)
+    newrelic_rpm (3.6.3.111)
     nokogiri (1.5.10)
     oauth (0.4.7)
     oauth2 (0.8.1)
@@ -323,6 +324,7 @@ DEPENDENCIES
   jquery-timepicker-addon-rails
   jquery-ui-rails
   launchy
+  newrelic_rpm
   omniauth-facebook
   omniauth-twitter
   pg

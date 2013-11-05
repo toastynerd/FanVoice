@@ -37,6 +37,10 @@ gem "fog", "~> 1.3.1"
 gem "carrierwave_direct"
 gem "sidekiq"
 
+# New relic for applicaiton monitoring and pinging
+gem 'newrelic_rpm'
+
+
 # pry debugging for test and dev
 group :test, :development do
   gem 'pry-rails'
